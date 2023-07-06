@@ -18,80 +18,28 @@ stories:
     - intent: schedule_new_appointment
     - intent: reschedule_Appointment
     - intent: health_screening
-  - action: appointment_form
-  - active_loop: appointment_form
-  - slot_was_set:
-    - requested_slot: mobile
-  - slot_was_set:
-    - mobile: '46377382'
-  - slot_was_set:
-    - requested_slot: age
-  - slot_was_set:
-    - age: '38'
-  - slot_was_set:
-    - requested_slot: gender
-  - slot_was_set:
-    - gender: 'male'
-  - slot_was_set:
-    - requested_slot: symptom
-  - slot_was_set:
-    - symptom: Flue
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_utter_department
-  - intent: tell_department
-    entities:
-      - department: "dept"
-  - slot_was_set:
-    - department: "dept"
-  - action: action_utter_doctor
-  - intent: tell_doctor
-    entities:
-      - doctor: "dept"
-  - slot_was_set:
-    - doctor: "dept"
-  - action: action_utter_schedule
-  - intent: tell_schedule
-    entities:
-      - date: "23/12/2023"
-      - time: "12:00 AM"
-  - slot_was_set:
-    - date: "dept"
-  - slot_was_set:
-    - time: "dept"
-  - action: utter_slots_values
-  - checkpoint: check_submit_appointment
-
-- story: nothing_else_path
-  steps:
-  - checkpoint: check_submit_appointment
-  - intent: affirm
-  - action: action_utter_submit
-  - intent: deny
-  - action: utter_goodbye
-  - action: action_restart
-
-- story: unhappy_appointment_submit_path
-  steps:
-  - checkpoint: check_submit_appointment
-  - intent: deny
-  - action: utter_ask_update_slot
-  - intent: update_slot
-    entities:
-    - slot: age
-  - slot_was_set:
-    - slot: age
-  - action: action_utter_ask_slot
-  - checkpoint: check_submit_appointment
+  - action: utter_ask_appointment_info
+  - intent: tell_appointment_info
+  - action: utter_appointment_confirm
 
 - story: cancel_appointment_path
   steps:
   - intent: cancel_appointment
-  - action: utter_ask_department
-  - intent: tell_department
-    entities:
-    - department: '78778788'
-  - slot_was_set:
-    - department: "78778788"
+  - action: utter_ask_appointment_cancel_info
+  - intent: tell_appointment_cancel_info
   - action: utter_appointment_cancel
+
+- story: other_services_path
+  steps:
+  - or:
+    - intent: occupational_screening
+    - intent: outpatient_insurance
+    - intent: inpatient_insurance
+    - intent: job_vacancy
+    - intent: medical_record
+    - intent: complaint
+    - intent: admission
+    - intent: billing_refund
+  - action: utter_ask_other_services_info
+  - intent: tell_other_service_info
+  - action: utter_other_services_confirm

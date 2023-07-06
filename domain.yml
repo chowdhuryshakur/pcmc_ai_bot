@@ -2,15 +2,13 @@ version: '3.1'
 intents:
 - Insurance
 - admission
+- billing_refund
 - affirm
 - appointment
-- billing_refund
 - bot_challenge
 - cancel_appointment
 - complaint
 - deny
-- faq_ask_about_wipdata
-- finishing_conversation
 - general
 - goodbye
 - greet
@@ -21,112 +19,31 @@ intents:
 - medical_record
 - occupational_screening
 - outpatient_insurance
-- refill_request
 - reschedule_Appointment
 - schedule_new_appointment
-- tell_age
-- tell_department
-- tell_doctor
-- tell_gender
-- tell_mobile
 - tell_name
-- tell_procedure
-- tell_schedule
-- tell_symptom
-- update_slot
+- tell_appointment_info
+- tell_appointment_cancel_info
+- tell_other_service_info
 entities:
-- department
 - name
-- mobile
-- age
-- gender
-- doctor
-- date
-- time
-- symptom
 - slot
-- procedure
-- state
-- city
-- refill_items
 slots:
   name:
     type: text
     mappings:
     - type: from_entity
       entity: name
-  mobile:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: mobile
-  age:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: age
-  gender:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: gender
-  department:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: department
-  doctor:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: doctor
-  date:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: date
-  time:
-    type: any
-    mappings:
-    - type: from_entity
-      entity: time
-  symptom:
-    type: list
-    mappings:
-    - type: from_entity
-      entity: symptom
   slot:
     type: text
     mappings:
     - type: from_entity
       entity: slot
-  procedure:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: procedure
-  state:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: state
-  city:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: city
-  refill_items:
-    type: list
-    mappings:
-    - type: from_entity
-      entity: refill_items
 responses:
-  utter_ask_update_slot:
-  - text: Which information do you want to change? E.g. I want to change my  age.
   utter_ask_name:
   - text: Hi, Hope you are having a good day. Could we start with your name please?
   utter_greet:
-  - text: Hi {name}\n Welcome to *Prince Court Medical Centre* WhatsApp Appointment.\n This Platform is strictly for appointment booking only.\n I am your Virtual Assistant. How may I assist you?
+  - text: "Hi {name}\n\nWelcome to *Prince Court Medical Centre* WhatsApp Appointment.\n\n_This Platform is strictly for appointment booking only._\n\nI am your *Virtual Assistant*. How may I assist you?"
     buttons:
     - title: Appointment
       payload: /appointment
@@ -137,7 +54,7 @@ responses:
     - title: Exit
       payload: /goodbye
   utter_appointment_options:
-  - text: Please allow us to have at least 1 working day for the arrangement to confirm or cancel an appointment.\n Select an option under appointment menu.
+  - text: Select an option under appointment menu.
     buttons:
     - title: Schedule New Appointment
       payload: /schedule_new_appointment
@@ -169,12 +86,14 @@ responses:
       payload: /medical_record
     - title: Job Vacancy
       payload: /job_vacancy
+  utter_ask_appointment_cancel_info:
+  - text: "Please allow us to have at least 1 working day for the arrangement to cancel your appointment.\n\nFor appointment cancellation, kindly provide us patient's details:\n\n*Patient's full name:*\n*Date of Birth:*\n*IC number (Malaysian):*"
   utter_appointment_cancel:
-  - text: Dear {name}\n Warmest Greeting from Prince Court Medical Centre.\n Thank you for choosing us as your preferred choice of healthcare service provider.\n As per your request, we have cancelled your appointment.
+  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nAs per your request, we have cancelled your appointment."
   utter_goodbye:
-  - text: Warmest Greeting from Prince Court Medical Centre.\n Thank you for choosing us as your preferred choice of healthcare service provider.
+  - text: "Warmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider."
   utter_iamabot:
-  - text: I'm a virtual assistant here to assist with your questions.
+  - text: I'm a virtual assistant here to assist with your PCMC support.
   utter_out_of_scope:
   - text: Sorry, I can't handle that request. For connecting to a human agent please click the button.
     buttons:
@@ -187,92 +106,30 @@ responses:
       payload: https://t.me/wipdatabotchannel
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
-  utter_ask_mobile:
-  - text: Please provide your contact number (it must be at least 10 digit).
-  utter_wrong_num_mobile:
-  - text: Mobile number must be at least 10 digit. Please try again.
-  utter_ask_age:
-  - text: What is your age? E.g. 25 years old,  50 years
-  utter_ask_gender:
-  - text: What is your gender?
-    buttons:
-    - title: Male
-      payload: Male
-    - title: Female
-      payload: Female
-    - title: Others
-      payload: Others
-  utter_ask_department:
-  - text: Please provide your IC number.
-  utter_ask_doctor:
-  - text: Preferred Doctor (if any)
-  utter_ask_schedule:
-  - custom:
-      text: Pick a
-      payload: '{}'
-  utter_ask_symptom:
-  - text: How are you feeling today? May I know your symptoms?
-  - text: What are your symptoms?
-  utter_slots_values:
-  - text: '{name} thanks for your informations. Your given informations are: \n 1) mobile- {mobile} \n 2) age- {age} \n 3) gender- {gender} \n 4) department- {department} \n 5) doctor- {doctor} \n 6) schedule- {date} {time} \n 7) your symptoms: {symptom}. \n\n Are these correct?'
-  utter_drop_value:
-  - custom:
-      text: Select a
-      payload: '{}'
-  utter_report:
-  - custom:
-      text: Here is the query result. Can I help you with anything else?
-      payload: '{}'
-  utter_general_custom:
-  - custom:
-      text: Here is the query result.
-      payload: '{}'
+  utter_ask_appointment_info:
+  - text: "Please allow us to have at least 1 working day for the arrangement to confirm an appointment.\n\nFor appointment booking, kindly provide us patient's details:\n\n*Patient's full name:*\n*Date of Birth:*\n*IC number (Malaysian):*\n*Gender:*\n*Email address:*\n*Contact Number:*\n*1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*Preferred Doctor (if any):*\n*Medical condition:*"
+  utter_appointment_confirm:
+  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nAs per your request, please find below appointment confirmation:\n\n*Patient's full name:* John\n*Attending Doctor:*Dr. Antony\n*Appointment Date @ Time:* 10th July 2023 @ 7:30pm\n*Insurance Assistant Direct Line:*03-21600877\n*Insurance Assistant Fax Line:*03-27823377\n\nBelow are useful reminder to ensure the registration process is smooth during your clinic visit with your Doctor at Prince Court Medical Centre.\n-   Kindly register at the Outpatient Specialist Clinic Registration Counter at Level 1, Lobby 2 before proceeding to the clinic. (Please allow 15 minutes for registration to be on time for your appointment)\n-   Please ensure that you have pre-arranged with your insurance Provider/Third Party Administrator or Corporate HR for your letter of guarantee of payment and kindly bring along this letter of guarantee to avoid any delay. (Prince Court Medical Centre must be an acceptable panel hospital to your insurance/TPA/Corporate HR for a letter of Guarantee to be issued)\n-   Please bring along any referral letter from your current Doctor (e.g. G.P) or previous test results done at another hospitals, for our attending doctor's reference."
+  utter_ask_other_services_info:
+  - text: "Please allow us to have at least 1 working day for the arrangement to cancel your appointment.\n\n_Kindly to be inform, we will forward your request/enquiry to our specific Department for their kind assistance._\n\nIn order for that, kindly provide us with the below details for them to reply to you directly.\n\n*Patient's full name:*\n*Date of Birth:*\n*Email address:*\n*Contact Number:*\n*Type of request / enquiry:*\n"
+  utter_other_services_confirm:
+  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nKindly be informed, we have forward your request / enquiry to John from HR depertment for their generous support and they will be in contact with you in due course.\n\nWe highly appreciate your kind understanding."
+  
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
-- action_check_for_refills
-- action_submit_refill_request
-- action_tell_name
-- action_utter_ask_slot
-- action_utter_average_charge
-- action_utter_average_medicare
-- action_utter_cheaper_city
-- action_utter_cheaper_provider
-- action_utter_city
-- action_utter_department
-- action_utter_department_drop
-- action_utter_doctor
-- action_utter_procedure
-- action_utter_schedule
-- action_utter_state
-- action_utter_submit
+- utter_ask_appointment_cancel_info
 - utter_appointment_cancel
 - utter_appointment_options
-- utter_ask_age
-- utter_ask_department
-- utter_ask_doctor
-- utter_ask_gender
 - utter_ask_name
-- utter_ask_schedule
-- utter_ask_symptom
-- utter_ask_update_slot
-- utter_drop_value
+- utter_ask_appointment_info
+- utter_appointment_confirm
+- utter_ask_other_services_info
+- utter_other_services_confirm
 - utter_general_custom
 - utter_goodbye
 - utter_greet
 - utter_please_rephrase
-- utter_report
-- utter_slots_values
-- utter_wrong_num_mobile
-- validate_appointment_form
-
-forms:
-  appointment_form:
-    ignored_intents:
-    - tell_name
-    required_slots:
-    - mobile
-    - age
-    - gender
-    - symptom
+- action_tell_name
+# - action_utter_doctor
