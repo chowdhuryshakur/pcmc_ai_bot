@@ -1,0 +1,385 @@
+version: "3.1"
+nlu:
+- intent: appointment
+  examples: |
+    - appointment
+    - I want to make an appointment
+    - please book an appointment for me
+- intent: greet
+  examples: |
+    - salam
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+- intent: tell_name
+  examples: |
+    - My namehide is Justine Kuper.
+    - I am John.
+    - I am Anaz Abdul Karim.
+    - Jack.
+    - Borhan.
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: finishing_conversation
+  examples: |
+    - ok
+    - okay
+    - thanks
+    - thank you
+    - okay thanks
+    - yes you too
+    - you too
+- intent: affirm
+  examples: |
+    - yes
+    - yap
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - n
+    - no
+    - none
+    - no thank you
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - not correct
+    - it is not correct
+    - na
+    - No
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: faq_ask_about_wipdata
+  examples: |
+    - What is the Wipdata?
+    - How about Wipdata?
+    - What's the Wipdata?
+    - Tell about Wipdata?
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+- intent: tell_mobile
+  examples: |
+    - number is [01843727741](mobile)
+    - My number is [01843727741](mobile)
+    - My mobile number is [4637457382](mobile)
+    - [33315327130](mobile)
+- intent: tell_age
+  examples: |
+    - I am [27](age) years old.
+    - [30](age) years old.
+    - My age is [97](age).
+    - I am [14](age) years old.
+    - [40](age)
+    - [50](age) Yr.
+    - [50](age) yo.
+    - [50](age) yr old.
+- intent: tell_gender
+  examples: |
+    - I am [male](gender).
+    - [male](gender).
+    - [others](gender).
+    - [female](gender).
+    - I am [female](gender).
+- intent: tell_department
+  examples: |
+    - IC number is [343223334](department)
+    - IC [645443223](department)
+    - [787787880](department)
+- intent: tell_doctor
+  examples: |
+    - Doctor is [Dr Ahmad Nizar Bin Jamaluddin](doctor)
+    - Doctor is [Dr Choy Chun Ngok](doctor)
+    - Doctor is [Dr Jeyamalar Rajadurai](doctor)
+    - Doctor is [Dr Kannan G. Pasamanickam](doctor)
+    - Doctor is [Dr Koh Kok Wei](doctor)
+    - Doctor is [Dr Shamruz Khan Akerem Khan](doctor)
+    - Doctor is [Dr Abel W.K. Arumugam](doctor)
+    - Doctor is [Dr Cha Kar Huei](doctor)
+    - Doctor is [Dr Emmanuel Peter](doctor)
+    - Doctor is [Dr Mohd Hanis Hj Ahmad](doctor)
+    - Doctor is [Dr Ragu Ramasamy](doctor)
+    - Doctor is [Dr Ong Kee Thiam](doctor)
+    - Doctor is [Dr Loh Pei Kee](doctor)
+    - Doctor is [Dr Siva Seeta Ramaiah](doctor)
+    - Doctor is [Dr Yong Fee Mann](doctor)
+    - Doctor is [Dr Sherrini Bazir Ahmad](doctor)
+    - Doctor is [Dr C K Ranjeev Prabhakeran](doctor)
+    - Doctor is [Dr Chen Harn Chin](doctor)
+    - Doctor is [Dr Ganesalingam Kanagasabai](doctor)
+    - Doctor is [Dr Maylene Kok](doctor)
+    - Doctor is [Dato Dr Anuar Bin Onah DSIS](doctor)
+    - Doctor is [Dr Appasamy Velu](doctor)
+    - Doctor is [Dr Chan Kin Yuen](doctor)
+    - Doctor is [Dr Chooi Yue Seng](doctor)
+    - Doctor is [Dr Lee Chong Meng](doctor)
+    - Doctor is [Dr Loke Yean Hwe](doctor)
+    - Doctor is [Dr Reminder Kaur Santha Singh](doctor)
+    - Doctor is [Dr Siow Yuen Chin](doctor)
+    - Doctor is [Dr Ting Joe Hang](doctor)
+    - Doctor is [Dr Wan Izwin Wan Hassan](doctor)
+    - Doctor is [Dr Bala Sundaram Mariappan](doctor)
+    - Doctor is [Dr Lee Boon Cheok](doctor)
+    - Doctor is [Dr Peter Ng Eng Pin](doctor)
+    - Doctor is [Prof Dato Dr Tan Hui Meng](doctor)
+    - Doctor is [Dr Mohd Rusdi Abdullah](doctor)
+    - Doctor is [Dr Ng Wuey Min](doctor)
+    - Doctor is [Dr Foo Yoke Ching](doctor)
+    - Doctor is [Dr Mastura MD Yusof](doctor)
+    - Doctor is [Dr Matin Mellor Abdullah](doctor)
+    - Doctor is [Dr Ng Yi Siang](doctor)
+    - Doctor is [Dr Vaishnavi Jeyasingam](doctor)
+    - Doctor is [Dr Winnie Ng Nyek Ping](doctor)
+    - Doctor is [Dr Yap Beng Khiong](doctor)
+    - Doctor is [Dr Chng Chin Chwen](doctor)
+    - Doctor is [Dr Chang Chee Khong](doctor)
+    - Doctor is [Dr Loh Liew Cheng](doctor)
+    - Doctor is [Dr Yap Yen Piow](doctor)
+- intent: tell_schedule
+  examples: |
+    - schedule is [3/16/2023](date), [10:10:00 AM](time)
+    - schedule is [1/15/2023](date), [03:50:00 AM](time)
+    - schedule is [4/20/2023](date), [03:50:00 AM](time)
+    - schedule is [12/15/2023](date), [09:00:00 PM](time)
+    - schedule is [5/30/2023](date), [11:55:00 PM](time)
+- intent: tell_symptom
+  examples: |
+    - I have [Flu](symptom), [fever](symptom), [cough](symptom), [Migrain](symptom)
+    - I have serious [Back pain](symptom), [fever](symptom)
+    - Suffering from [Flue](symptom), [headache](symptom)
+    - I have [Upper abdominal pain](symptom), [Upper belly pain](symptom), [Lower abdominal pain](symptom)
+    - I have [Boil (Furuncle)](symptom), [Alcohol abuse](symptom), [Excessive drinking](symptom)
+    - I have [Nervousness](symptom), [Arm ache or pain](symptom), [Back ache or pain](symptom)
+    - I have [Easy bruising](symptom), [Spontaneous bleeding](symptom), [Blood in vomit](symptom)
+    - I have [Pain or soreness of breast](symptom), [Calf pain](symptom), [Lower leg pain](symptom)
+    - I have [Shakes](symptom), [Rigors](symptom), [Change in behavior](symptom)
+    - I have [Cough](symptom), [Dark stools](symptom), [Black stools](symptom)
+    - I have [Dizziness](symptom), [Lightheaded](symptom), [Double vision (Diplopia)](symptom)
+    - I have [Elbow ache or pain](symptom), [Eye pain (Irritation)](symptom), [Facial pain](symptom)
+    - I have [Passing out](symptom), [Fever](symptom), [Elevated temperature](symptom)
+    - I have [Flank pain](symptom), [Side pain](symptom), [Frequent urination (Frequency)](symptom)
+    - I have [Groin pain](symptom), [Delusions or hallucinations](symptom), [Hand, finger ache or pain](symptom)
+    - I have [Head pain](symptom), [Heel pain](symptom), [Heat illness](symptom)
+    - I have [Urticaria (Hives)](symptom), [Hoarse voice](symptom), [Hypothermia (Low temperature)](symptom)
+    - I have [Leaking urine](symptom), [Insect sting](symptom), [Insect bite](symptom)
+    - I have [Joint pain](symptom), [Kidney pain (Flank pain)](symptom), [Knee pain](symptom)
+    - I have [Swelling of both legs](symptom), [Lower extremity edema (swelling)](symptom), [Lethargy (Sluggishness)](symptom)
+    - I have [Muscle aches](symptom), [Nail Injury](symptom), [Nasal bleeding](symptom)
+    - I have [Nausea](symptom), [Neck ache or pain](symptom), [Neck swelling](symptom)
+    - I have [Tingling](symptom), [Paresthesias (Numbness)](symptom), [Obesity](symptom)
+    - I have [Painful urination](symptom), [Heart pulsations and palpitations](symptom), [Skipped heart beat](symptom)
+    - I have [Penis pain](symptom), [Poisoning](symptom), [Pregnancy problem](symptom)
+    - I have [Rash](symptom), [Rectal pain](symptom), [Rectal swelling](symptom)
+    - I have [Seizure](symptom), [Shortness of breath](symptom), [Shoulder ache or pain](symptom)
+    - I have [Snake bite](symptom), [Sore throat](symptom), [Speech problem](symptom)
+    - I have [Spider bite](symptom), [Substance abuse (Drug abuse)](symptom), [Suicidal tendencies](symptom)
+    - I have [Toe pain](symptom), [Tooth pain](symptom), [Dental problem](symptom)
+    - I have [Unsteady gait (Trouble walking)](symptom), [Vaginal bleeding](symptom), [Vaginal bleeding after menopause](symptom)
+    - I have [Vaginal itching](symptom), [Vaginal pain](symptom), [Vertigo (Room spinning)](symptom)
+    - I have [Loss of vision (Blindness)](symptom), [Vomiting](symptom), [General weakness](symptom)
+    - I have [Wrist pain](symptom), [Throat pain](symptom), [Tremors](symptom)
+    - I have [Testicle pain](symptom), [Sadness](symptom), [Tongue swelling](symptom)
+    - I have [Swollen lymph nodes (Large lymph nodes)](symptom), [Failure to thrive](symptom), [Behavioral problem](symptom)
+    - I have [Headache after trauma](symptom), [Learning difficulties](symptom), [Blood in urine (Hematuria)](symptom)
+    - I have [Choking](symptom), [Painful rash](symptom), [Sleeping problem](symptom)
+    - I have [Melena (Black stools from blood)](symptom), [Vomiting coffee ground material](symptom), [Ringing in ears (Tinnitus)](symptom)
+    - I have [Eye redness](symptom), [Sneezing](symptom), [Bleeding gums](symptom)
+    - I have [Ataxia (Incoordination)](symptom), [Loss of coordination](symptom), [Slurred speech](symptom)
+    - I have [Cyanosis (Blue skin coloration)](symptom), [Muscle spasm](symptom), [Muscle cramps](symptom)
+    - I have [Skin growths](symptom), [Hand numbness (paresthesias)](symptom), [Ankle pain](symptom)
+    - I have [Night sweats](symptom), [Flatulence (Passing gas)](symptom), [Blister (Pocket of fluid)](symptom)
+    - I have [Impotence](symptom), [Heart murmur (Abnormal heart sound)](symptom), [Bloating](symptom)
+    - I have [Abdominal distension](symptom), [Protruding abdomen](symptom), [Bulging abdomen](symptom)
+    - I have [Painful skin](symptom), [Sore skin](symptom), [Hot skin](symptom)
+    - I have [Swollen skin](symptom), [Lip swelling](symptom), [Swollen lip](symptom)
+    - I have [Swollen mouth](symptom), [Pedal edema](symptom), [Foot swelling](symptom)
+    - I have [Flashes of light](symptom), [Eye floaters](symptom), [Burning with urination](symptom)
+    - I have [Bruising](symptom), [Blue skin tone](symptom), [Irritated eyes](symptom)
+    - I have [Coughing blood](symptom), [Trouble sleeping](symptom), [Yellow skin](symptom)
+    - I have [Sweating at night](symptom), [Collection of pus](symptom), [Drug abuse](symptom)
+    - I have [Throwing up](symptom), [Amenorrhea (No menstruation)](symptom), [Blurry vision](symptom)
+    - I have [Swollen gums](symptom), [Gum swelling](symptom), [Low blood sugar](symptom)
+    - I have [Hyperpigmentation (Darkening skin)](symptom), [Skin darkening](symptom), [Low heart rate](symptom)
+    - I have [Foot itching](symptom), [Itching feet](symptom), [Hot flashes](symptom)
+    - I have [Skipped periods](symptom), [Infertility](symptom), [Sterility](symptom)
+    - I have [Arm swelling](symptom), [Calf swelling](symptom), [Leg swelling](symptom)
+    - I have [Tarry stools](symptom), [Maroon stools](symptom), [Diplopia (Seeing double)](symptom)
+    - I have [Leg cut (laceration)](symptom), [Foot cut (laceration)](symptom), [Arm itching](symptom)
+    - I have [Arm redness](symptom), [Leg redness](symptom), [Hand itching](symptom)
+    - I have [Upper leg pain](symptom), [Thigh pain](symptom), [Armpit pain](symptom)
+    - I have [Nasal congestion](symptom), [Stuffy nose](symptom), [Joint stiffness](symptom)
+    - I have [Chest burning](symptom), [Memory loss](symptom), [Loss of memory](symptom)
+    - I have [Foot numbness (paresthesias)](symptom), [Face numbness (paresthesias)](symptom), [Alopecia (Hair loss)](symptom)
+    - I have [Facial droop (weakness)](symptom), [Limping in a child](symptom), [Childhood limping](symptom)
+    - I have [Shin pain](symptom), [Stings](symptom), [Sleep disorders](symptom)
+    - I have [Snoring](symptom), [Body aches](symptom), [Upset stomach](symptom)
+    - I have [Itchy eyes](symptom), [Blood in stool](symptom), [Skin lesion](symptom)
+    - I have [Chest pain](symptom), [Skin infection](symptom), [Stomach and abdominal pain](symptom)
+    - I have [Fatigue](symptom), [Anger](symptom), [Bitterness](symptom)
+    - I have [Hurts to breathe](symptom), [Difficulty breathing](symptom), [Breathing stopped](symptom)
+    - I have [Skin bumps](symptom), [Room spinning](symptom), [Congestion in chest or lungs](symptom)
+    - I have [Discharge from ear](symptom), [Low back ache or pain](symptom), [Convulsions](symptom)
+    - I have [Loose stools](symptom), [Penis inflammation or swelling](symptom), [Excessive appetite](symptom)
+    - I have [Finger pain](symptom), [Hand, finger swelling](symptom), [Shaking](symptom)
+    - I have [Lump or mass of breast](symptom), [Dry heaves](symptom), [Cant keep food down](symptom)
+    - I have [Agitated](symptom), [Confusion](symptom), [Altered mental status (confusion)](symptom)
+    - I have [Headache and weakness](symptom), [Confusion and headache](symptom), [Nipple discharge](symptom)
+- intent: refill_request
+  examples: |
+    - Refill [Esloric](refill_items), [Emorivir](refill_items), [Aclitol](refill_items)
+    - Refill [Geston](refill_items), [Camlotel](refill_items), [Remivir](refill_items), [Erlonix](refill_items)
+    - Refill [Xinc](refill_items), [Ostocal](refill_items)
+- intent: update_slot
+  examples: |
+    - I want to change my [age](slot).
+    - I want to change my [gender](slot).
+    - I want to change my [symptom](slot).
+    - I want to change my [mobile](slot) number.
+    - I want to change [department](slot).
+    - I want to change [doctor](slot).
+    - Want to change [schedule](slot).
+    - [age](slot).
+    - [gender](slot).
+    - [symptom](slot).
+    - [mobile](slot) number.
+    - [department](slot).
+    - [doctor](slot).
+    - [schedule](slot).
+- intent: tell_procedure
+  examples: |
+    - procedure is [EXTRACRANIAL PROCEDURES](procedure)
+    - procedure is [DEGENERATIVE NERVOUS SYSTEM DISORDERS](procedure)
+    - procedure is [TRANSIENT ISCHEMIA](procedure)
+    - procedure is [INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION](procedure)
+    - procedure is [SEIZURES](procedure)
+    - procedure is [DYSEQUILIBRIUM](procedure)
+    - procedure is [PULMONARY EMBOLISM](procedure)
+    - procedure is [RESPIRATORY INFECTIONS & INFLAMMATIONS](procedure)
+    - procedure is [CHRONIC OBSTRUCTIVE PULMONARY DISEASE](procedure)
+    - procedure is [SIMPLE PNEUMONIA & PLEURISY](procedure)
+- intent: human_handoff
+  examples: |
+    - I want a human
+    - can I speak to an agent
+    - real agent please
+    - real human
+    - chat with a live agent
+    - give me a person please
+    - i want to talk to a human
+    - can you transfer me to a human?
+    - handoff
+    - talk to a human
+    - i need to talk to a human
+    - human please
+    - i need help from a human
+    - i need help from a real human
+    - give me a human
+    - i want to talk to human
+    - i want a representative
+    - i want to talk to a person
+    - I don't wanna talk to a bot
+    - I dont like to talk to a machine
+    - I want to talk to a human
+    - I want to talk to the founders
+    - are there also humans working for your company?
+    - can I speak to a person?
+    - can i please speak to a human?
+    - can you forward me to your team
+    - can you please connect me to a real rasa employee?
+    - can you put me in touch with a human?
+    - do you have human support ?
+    - gimme a proper human
+    - give me a human now
+    - human handoff
+    - i dont wanna talk to a bot
+    - i want to speak to a real person
+    - i want to speak to customer service
+    - i want to talk to someone at rasa
+    - i want to talk to someone else
+    - i want to talk to someone who is smarter than you
+    - i would like to speak to a person
+    - i'd rather speak with a real rasa employee
+    - id like to talk to a real rasa employee
+    - let me speak with a real person please
+    - let me talk to a human
+    - let me talk to a real person
+    - please give me a human
+    - service agent
+    - someone from customer care
+    - speak to a real person
+    - talking to a bot is stupid
+    - that's annoying I'd like to speak to someone real
+    - thats not helping, can i talk to human?
+    - wrong i want to speak to a human
+    - can i speak to human
+    - can i speak to your human
+    - i want to chat with human
+    - How do I talk to a human
+    - talk with a human
+    - Can i talk to a human instead
+    - nevermind.... you're not human ... I need to talk to a live person
+    - Can you get a human to assist me?
+    - Can i talk to a human?
+    - Can I talk to a human
+    - Can I speak to a human?
+    - can i speak to a human
+    - no, i want to talk to human
+    - can you hand a conversation over to a human?
+    - can I talk to human?
+    - can I talk to human
+    - talk to human
+    - i want human :(
+    - can i talk to human
+    - i want to speak to human
+    - can i talk to a real person?
+    - connect me to a real person
+    - I need a real person
+    - can i took with a real person
+    - let me speak to a real person
+    - let me speak to a real person please
+    - i want to talk to a real person
+- regex: age
+  examples: |
+    - \d{1,2}
+- regex: department
+  examples: |
+    - \d{8,9}
+- regex: mobile
+  examples: |
+    - \d{10,12}
+- regex: tell_name
+  examples: |
+    - namehide

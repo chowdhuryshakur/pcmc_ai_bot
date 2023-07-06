@@ -1,0 +1,97 @@
+version: "3.1"
+
+stories:
+
+- story: greet_path_1
+  steps:
+  - intent: greet
+  - action: utter_ask_name
+  - intent: tell_name
+  - action: action_tell_name
+  - slot_was_set:
+    - name: KUTER
+  - action: utter_greet
+
+- story: happy_appointment_path
+  steps:
+  - or:
+    - intent: schedule_new_appointment
+    - intent: reschedule_Appointment
+    - intent: health_screening
+  - action: appointment_form
+  - active_loop: appointment_form
+  - slot_was_set:
+    - requested_slot: mobile
+  - slot_was_set:
+    - mobile: '46377382'
+  - slot_was_set:
+    - requested_slot: age
+  - slot_was_set:
+    - age: '38'
+  - slot_was_set:
+    - requested_slot: gender
+  - slot_was_set:
+    - gender: 'male'
+  - slot_was_set:
+    - requested_slot: symptom
+  - slot_was_set:
+    - symptom: Flue
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_utter_department
+  - intent: tell_department
+    entities:
+      - department: "dept"
+  - slot_was_set:
+    - department: "dept"
+  - action: action_utter_doctor
+  - intent: tell_doctor
+    entities:
+      - doctor: "dept"
+  - slot_was_set:
+    - doctor: "dept"
+  - action: action_utter_schedule
+  - intent: tell_schedule
+    entities:
+      - date: "23/12/2023"
+      - time: "12:00 AM"
+  - slot_was_set:
+    - date: "dept"
+  - slot_was_set:
+    - time: "dept"
+  - action: utter_slots_values
+  - checkpoint: check_submit_appointment
+
+- story: nothing_else_path
+  steps:
+  - checkpoint: check_submit_appointment
+  - intent: affirm
+  - action: action_utter_submit
+  - intent: deny
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: unhappy_appointment_submit_path
+  steps:
+  - checkpoint: check_submit_appointment
+  - intent: deny
+  - action: utter_ask_update_slot
+  - intent: update_slot
+    entities:
+    - slot: age
+  - slot_was_set:
+    - slot: age
+  - action: action_utter_ask_slot
+  - checkpoint: check_submit_appointment
+
+- story: cancel_appointment_path
+  steps:
+  - intent: cancel_appointment
+  - action: utter_ask_department
+  - intent: tell_department
+    entities:
+    - department: '78778788'
+  - slot_was_set:
+    - department: "78778788"
+  - action: utter_appointment_cancel
