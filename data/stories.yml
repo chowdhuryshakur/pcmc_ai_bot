@@ -16,7 +16,7 @@ stories:
   steps:
   - or:
     - intent: schedule_new_appointment
-    - intent: reschedule_Appointment
+    - intent: reschedule_appointment
     - intent: health_screening
   - action: utter_ask_appointment_info
   - intent: tell_appointment_info

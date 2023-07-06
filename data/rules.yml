@@ -7,7 +7,7 @@ rules:
     - action: utter_appointment_options
   - rule: Insurance options rule
     steps:
-    - intent: Insurance
+    - intent: insurance
     - action: utter_insurance_options
   - rule: General options rule
     steps:

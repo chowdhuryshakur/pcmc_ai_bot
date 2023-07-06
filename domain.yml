@@ -1,6 +1,6 @@
 version: '3.1'
 intents:
-- Insurance
+- insurance
 - admission
 - billing_refund
 - affirm
@@ -19,7 +19,7 @@ intents:
 - medical_record
 - occupational_screening
 - outpatient_insurance
-- reschedule_Appointment
+- reschedule_appointment
 - schedule_new_appointment
 - tell_name
 - tell_appointment_info
@@ -59,7 +59,7 @@ responses:
     - title: Schedule New Appointment
       payload: /schedule_new_appointment
     - title: Reschedule Appointment
-      payload: /reschedule_Appointment
+      payload: /reschedule_appointment
     - title: Cancel Appointment
       payload: /cancel_appointment
     - title: Health Screening
