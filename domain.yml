@@ -266,3 +266,13 @@ actions:
 - utter_slots_values
 - utter_wrong_num_mobile
 - validate_appointment_form
+
+forms:
+  appointment_form:
+    ignored_intents:
+    - tell_name
+    required_slots:
+    - mobile
+    - age
+    - gender
+    - symptom
