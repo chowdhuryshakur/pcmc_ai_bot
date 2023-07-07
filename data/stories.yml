@@ -19,15 +19,41 @@ stories:
     - intent: reschedule_appointment
     - intent: health_screening
   - action: utter_ask_appointment_info
+  - checkpoint: check_appointment_info
+
+- story: right_info_appointment_path
+  steps:
+  - checkpoint: check_appointment_info
   - intent: tell_appointment_info
   - action: utter_appointment_confirm
+  - action: action_restart
+
+- story: wrong_info_appointment_path
+  steps:
+  - checkpoint: check_appointment_info
+  - intent: nlu_fallback
+  - action: utter_appointment_correct_info_format
+  - checkpoint: check_appointment_info
 
 - story: cancel_appointment_path
   steps:
   - intent: cancel_appointment
   - action: utter_ask_appointment_cancel_info
+  - checkpoint: check_appointment_cancel_info
+
+- story: right_cancel_appointment_path
+  steps:
+  - checkpoint: check_appointment_cancel_info
   - intent: tell_appointment_cancel_info
   - action: utter_appointment_cancel
+  - action: action_restart
+
+- story: wrong_cancel_appointment_path
+  steps:
+  - checkpoint: check_appointment_cancel_info
+  - intent: nlu_fallback
+  - action: utter_correct_appointment_cancel_info_formate
+  - checkpoint: check_appointment_cancel_info
 
 - story: other_services_path
   steps:
@@ -41,5 +67,23 @@ stories:
     - intent: admission
     - intent: billing_refund
   - action: utter_ask_other_services_info
+  - checkpoint: check_other_service_info
+
+- story: right_other_services_path
+  steps:
+  - checkpoint: check_other_service_info
   - intent: tell_other_service_info
   - action: utter_other_services_confirm
+  - action: action_restart
+
+- story: wrong_other_services_path
+  steps:
+  - checkpoint: check_other_service_info
+  - intent: nlu_fallback
+  - action: utter_other_services_correct_info_formate
+  - checkpoint: check_other_service_info
+
+- story: Ask_the_user_to_rephrase_whenever_they_send_a_message_with_low_NLU_confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase

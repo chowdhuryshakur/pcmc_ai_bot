@@ -25,6 +25,7 @@ intents:
 - tell_appointment_info
 - tell_appointment_cancel_info
 - tell_other_service_info
+- tell_confusion
 entities:
 - name
 - slot
@@ -94,6 +95,8 @@ responses:
   - text: "Warmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider."
   utter_iamabot:
   - text: I'm a virtual assistant here to assist with your PCMC support.
+  utter_confusion:
+  - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
   utter_out_of_scope:
   - text: Sorry, I can't handle that request. For connecting to a human agent please click the button.
     buttons:
@@ -114,12 +117,19 @@ responses:
   - text: "Please allow us to have at least 1 working day for the arrangement to cancel your appointment.\n\n_Kindly to be inform, we will forward your request/enquiry to our specific Department for their kind assistance._\n\nIn order for that, kindly provide us with the below details for them to reply to you directly.\n\n*Patient's full name:*\n*Date of Birth:*\n*Email address:*\n*Contact Number:*\n*Type of request / enquiry:*\n"
   utter_other_services_confirm:
   - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nKindly be informed, we have forward your request / enquiry to John from HR depertment for their generous support and they will be in contact with you in due course.\n\nWe highly appreciate your kind understanding."
+  utter_appointment_correct_info_format:
+  - text: "Please use correct formate of patient's details.\nYou can use the below format to put patient's details.\n\n*Patient's full name:* Patient's name here\n*Date of Birth:* dob here\n*IC number (Malaysian):* 232***\n*Gender:* gender here\n*Email address:* exm@exmpl.com\n*Contact Number:* 03-34343434\n*1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*Preferred Doctor (if any):* doctor's name here\n*Medical condition:* medical condition like symptoms here"
+  utter_correct_appointment_cancel_info_formate:
+  - text: "Please use correct formate of information.\nYou can use the below format to put appointment details.\n\n*Patient's full name:* Patient's name here\n*Date of Birth:* dob here\n*IC number (Malaysian):* 232***"
+  utter_other_services_correct_info_formate:
+  - text: "Please use correct formate of information.\nYou can use the below format to put your details.\n\n*Patient's full name:* Patient's name here\n*Date of Birth:* dob here\n*Email address:* exm@exmpl.com\n*Contact Number:* 03-34343434\n*Type of request / enquiry:* e.g. Any job vacancy opened.\n"
   
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
 - utter_ask_appointment_cancel_info
+- utter_correct_appointment_cancel_info_formate
 - utter_appointment_cancel
 - utter_appointment_options
 - utter_ask_name
@@ -132,4 +142,7 @@ actions:
 - utter_greet
 - utter_please_rephrase
 - action_tell_name
+- utter_confusion
+- utter_appointment_correct_info_format
+- utter_other_services_correct_info_formate
 # - action_utter_doctor

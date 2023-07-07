@@ -41,6 +41,13 @@ nlu:
     - see you around
     - bye bye
     - see you later
+- intent: tell_confusion
+  examples: |
+    - i am confused
+    - i dont understand
+    - i want to speak to someone
+    - i want to book an appointment but i dont know whos the doctor
+    - please call me back
 - intent: affirm
   examples: |
     - yes
