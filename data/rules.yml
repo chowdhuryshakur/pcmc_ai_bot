@@ -33,7 +33,3 @@ rules:
     steps:
     - intent: human_handoff
     - action: utter_handoff
-  - rule: confusion_rules
-    steps:
-    - intent: tell_confusion
-    - action: utter_confusion

@@ -25,7 +25,6 @@ intents:
 - tell_appointment_info
 - tell_appointment_cancel_info
 - tell_other_service_info
-- tell_confusion
 entities:
 - name
 - slot
@@ -95,8 +94,6 @@ responses:
   - text: "Warmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider."
   utter_iamabot:
   - text: I'm a virtual assistant here to assist with your PCMC support.
-  utter_confusion:
-  - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
   # utter_out_of_scope:
   # - text: Sorry, I can't handle that request. For connecting to a human agent please click the button.
   #   buttons:
@@ -109,11 +106,11 @@ responses:
   utter_ask_appointment_info:
   - text: "Please allow us to have at least 1 working day for the arrangement to confirm an appointment.\n\nFor appointment booking, kindly provide us patient's details:\n\n*Patient's full name:*\n*Date of Birth:*\n*IC number (Malaysian):*\n*Gender:*\n*Email address:*\n*Contact Number:*\n*1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*Preferred Doctor (if any):*\n*Medical condition:*"
   utter_appointment_confirm:
-  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nAs per your request, please find below appointment confirmation:\n\n*Patient's full name:* John\n*Attending Doctor:* Dr. Antony\n*Appointment Date @ Time:* 10th July 2023 @ 7:30pm\n*Insurance Assistant Direct Line:* 03-21600877\n*Insurance Assistant Fax Line:* 03-27823377\n\nBelow are useful reminder to ensure the registration process is smooth during your clinic visit with your Doctor at Prince Court Medical Centre.\n-   Kindly register at the Outpatient Specialist Clinic Registration Counter at Level 1, Lobby 2 before proceeding to the clinic. (Please allow 15 minutes for registration to be on time for your appointment)\n-   Please ensure that you have pre-arranged with your insurance Provider/Third Party Administrator or Corporate HR for your letter of guarantee of payment and kindly bring along this letter of guarantee to avoid any delay. (Prince Court Medical Centre must be an acceptable panel hospital to your insurance/TPA/Corporate HR for a letter of Guarantee to be issued)\n-   Please bring along any referral letter from your current Doctor (e.g. G.P) or previous test results done at another hospitals, for our attending doctor's reference."
+  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nAs per your request, please find below appointment confirmation:\n\n*Patient's full name:* Ali Kassim\n*Attending Doctor:* Dr. Prasad\n*Appointment Date @ Time:* 10th July 2023 @ 7:30pm\n*Insurance Assistant Direct Line:* 03-21600877\n*Insurance Assistant Fax Line:* 03-27823377\n\nBelow are useful reminder to ensure the registration process is smooth during your clinic visit with your Doctor at Prince Court Medical Centre.\n-   Kindly register at the Outpatient Specialist Clinic Registration Counter at Level 1, Lobby 2 before proceeding to the clinic. (Please allow 15 minutes for registration to be on time for your appointment)\n-   Please ensure that you have pre-arranged with your insurance Provider/Third Party Administrator or Corporate HR for your letter of guarantee of payment and kindly bring along this letter of guarantee to avoid any delay. (Prince Court Medical Centre must be an acceptable panel hospital to your insurance/TPA/Corporate HR for a letter of Guarantee to be issued)\n-   Please bring along any referral letter from your current Doctor (e.g. G.P) or previous test results done at another hospitals, for our attending doctor's reference."
   utter_ask_other_services_info:
   - text: "Please allow us to have at least 1 working day for the arrangement to cancel your appointment.\n\n_Kindly to be inform, we will forward your request/enquiry to our specific Department for their kind assistance._\n\nIn order for that, kindly provide us with the below details for them to reply to you directly.\n\n*Patient's full name:*\n*Date of Birth:*\n*Email address:*\n*Contact Number:*\n*Type of request / enquiry:*\n"
   utter_other_services_confirm:
-  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nKindly be informed, we have forward your request / enquiry to John from HR depertment for their generous support and they will be in contact with you in due course.\n\nWe highly appreciate your kind understanding."
+  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nKindly be informed, we have forward your request / enquiry to Mr. Ali Kassim from HR depertment for their generous support and they will be in contact with you in due course.\n\nWe highly appreciate your kind understanding."
   utter_appointment_correct_info_format:
   - text: "Please use correct format of patient's details.\nYou can use the below example to put patient's details.\n\nPatient's full name: *Ali Kassim*\nDate of Birth: *2 June 1978*\nIC number (Malaysian): *780602-10-6679*\nGender: *Male*\nEmail address: *ali@gmail.com*\nContact Number: *018-99028997*\n1st choice appointment date @ time: *_02/08/2023 @ 2:00 pm_*\n2nd choice appointment date @ time: *_04/08/2023 @ 9:00 am_*\nPreferred Doctor (if any): *Dr. Prasad*\nMedical condition: *Gastric*"
   utter_correct_appointment_cancel_info_formate:
@@ -139,7 +136,6 @@ actions:
 - utter_greet
 - utter_please_rephrase
 - action_tell_name
-- utter_confusion
 - utter_appointment_correct_info_format
 - utter_other_services_correct_info_formate
 # - action_utter_doctor

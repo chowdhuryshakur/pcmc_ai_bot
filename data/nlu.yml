@@ -8,25 +8,19 @@ nlu:
 - intent: greet
   examples: |
     - salam
-    - hey
-    - hello
     - hi
     - hello there
     - good morning
     - good evening
-    - moin
     - hey there
     - let's go
     - hey dude
-    - goodmorning
-    - goodevening
     - good afternoon
-    - Hi
 - intent: tell_name
   examples: |
-    - My namehide is Justine Kuper.
-    - I am John.
-    - I am Anaz Abdul Karim.
+    - namehide Dipu.
+    - namehide Shitu.
+    - namehide Soccur.
 - intent: goodbye
   examples: |
     - cu
@@ -39,13 +33,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-- intent: tell_confusion
-  examples: |
-    - i am confused
-    - i dont understand
-    - i want to speak to someone
-    - i want to book an appointment but i dont know whos the doctor
-    - please call me back
 - intent: affirm
   examples: |
     - yes
@@ -57,8 +44,6 @@ nlu:
     - correct
 - intent: deny
   examples: |
-    - n
-    - no
     - none
     - no thank you
     - never
@@ -66,10 +51,8 @@ nlu:
     - don't like that
     - no way
     - not really
-    - not correct
     - it is not correct
     - na
-    - No
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -98,33 +81,30 @@ nlu:
     - "Patient's full name:  Date of Birth:  IC number (Malaysian): " 
 - intent: human_handoff
   examples: |
+    - i am confused
+    - i dont understand
+    - i want to book an appointment but i dont know whos the doctor
+    - please call me back
     - I want a human
     - can I speak to an agent
     - real agent please
-    - real human
     - chat with a live agent
     - give me a person please
     - i want to talk to a human
     - can you transfer me to a human?
     - handoff
-    - talk to a human
     - i need to talk to a human
     - human please
-    - i need help from a human
     - i need help from a real human
     - give me a human
-    - i want to talk to human
     - i want a representative
     - i want to talk to a person
-    - I don't wanna talk to a bot
     - I dont like to talk to a machine
-    - I want to talk to a human
     - I want to talk to the founders
     - are there also humans working for your company?
     - can I speak to a person?
     - can i please speak to a human?
     - can you forward me to your team
-    - can you please connect me to a real rasa employee?
     - can you put me in touch with a human?
     - do you have human support ?
     - gimme a proper human
@@ -133,7 +113,6 @@ nlu:
     - i dont wanna talk to a bot
     - i want to speak to a real person
     - i want to speak to customer service
-    - i want to talk to someone at rasa
     - i want to talk to someone else
     - i want to talk to someone who is smarter than you
     - i would like to speak to a person
@@ -141,39 +120,23 @@ nlu:
     - id like to talk to a real rasa employee
     - let me speak with a real person please
     - let me talk to a human
-    - let me talk to a real person
     - please give me a human
-    - service agent
     - someone from customer care
     - speak to a real person
-    - talking to a bot is stupid
+    - talking to a robot is stupid
     - that's annoying I'd like to speak to someone real
     - thats not helping, can i talk to human?
     - wrong i want to speak to a human
-    - can i speak to human
     - can i speak to your human
     - i want to chat with human
     - How do I talk to a human
-    - talk with a human
     - Can i talk to a human instead
     - nevermind.... you're not human ... I need to talk to a live person
     - Can you get a human to assist me?
     - Can i talk to a human?
-    - Can I talk to a human
     - Can I speak to a human?
-    - can i speak to a human
-    - no, i want to talk to human
     - can you hand a conversation over to a human?
-    - can I talk to human?
-    - can I talk to human
-    - talk to human
-    - i want human :(
-    - can i talk to human
     - i want to speak to human
-    - can i talk to a real person?
     - connect me to a real person
     - I need a real person
-    - can i took with a real person
-    - let me speak to a real person
     - let me speak to a real person please
-    - i want to talk to a real person
