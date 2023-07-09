@@ -42,7 +42,7 @@ slots:
       entity: slot
 responses:
   utter_ask_name:
-  - text: Hi, Hope you are having a good day. Could we start with your name please?
+  - text: Hi, Hope you are having a good day. How it is going there?
   utter_greet:
   - text: "Hi {name}\n\nWelcome to *Prince Court Medical Centre* WhatsApp Appointment.\n\n_This Platform is strictly for appointment booking only._\n\nI am your *Virtual Assistant*. How may I assist you?"
     buttons:
@@ -97,16 +97,13 @@ responses:
   - text: I'm a virtual assistant here to assist with your PCMC support.
   utter_confusion:
   - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
-  utter_out_of_scope:
-  - text: Sorry, I can't handle that request. For connecting to a human agent please click the button.
-    buttons:
-    - title: Live human agent
-      payload: https://t.me/wipdatabotchannel
+  # utter_out_of_scope:
+  # - text: Sorry, I can't handle that request. For connecting to a human agent please click the button.
+  #   buttons:
+  #   - title: Live human agent
+  #     payload: https://t.me/wipdatabotchannel
   utter_handoff:
-  - text: For connecting to a human agent please click the button.
-    buttons:
-    - title: Live human agent
-      payload: https://t.me/wipdatabotchannel
+  - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   utter_ask_appointment_info:
@@ -118,11 +115,11 @@ responses:
   utter_other_services_confirm:
   - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nKindly be informed, we have forward your request / enquiry to John from HR depertment for their generous support and they will be in contact with you in due course.\n\nWe highly appreciate your kind understanding."
   utter_appointment_correct_info_format:
-  - text: "Please use correct formate of patient's details.\nYou can use the below format to put patient's details.\n\n*Patient's full name:* Patient's name here\n*Date of Birth:* dob here\n*IC number (Malaysian):* 232***\n*Gender:* gender here\n*Email address:* exm@exmpl.com\n*Contact Number:* 03-34343434\n*1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*Preferred Doctor (if any):* doctor's name here\n*Medical condition:* medical condition like symptoms here"
+  - text: "Please use correct format of patient's details.\nYou can use the below example to put patient's details.\n\nPatient's full name: *John Doe*\nDate of Birth: *31 May 1990*\nIC number (Malaysian): *232455*\nGender: *Male*\nEmail address: *exm@exmpl.com*\nContact Number: *03-34343434*\n1st choice appointment date @ time: _02/08/2023 @ 7:30 pm_\n2nd choice appointment date @ time: _04/08/2023 @ 7:30 pm_\nPreferred Doctor (if any): *Dr. Fredric*\nMedical condition: *Fever and cold*"
   utter_correct_appointment_cancel_info_formate:
-  - text: "Please use correct formate of information.\nYou can use the below format to put appointment details.\n\n*Patient's full name:* Patient's name here\n*Date of Birth:* dob here\n*IC number (Malaysian):* 232***"
+  - text: "Please use correct format of information.\nYou can use the below example to put appointment details.\n\nPatient's full name: *John Doe*\nDate of Birth: *31 May 1990*\nIC number (Malaysian): *232455*"
   utter_other_services_correct_info_formate:
-  - text: "Please use correct formate of information.\nYou can use the below format to put your details.\n\n*Patient's full name:* Patient's name here\n*Date of Birth:* dob here\n*Email address:* exm@exmpl.com\n*Contact Number:* 03-34343434\n*Type of request / enquiry:* e.g. Any job vacancy opened.\n"
+  - text: "Please use correct format of information.\nYou can use the below example to put your details.\n\nPatient's full name: *John Doe*\nDate of Birth: *31 May 1990*\nEmail address: *exm@exmpl.com*\nContact Number: *03-34343434*\nType of request / enquiry: *I want to know about my bill details.*."
   
 session_config:
   session_expiration_time: 60

@@ -27,8 +27,6 @@ nlu:
     - My namehide is Justine Kuper.
     - I am John.
     - I am Anaz Abdul Karim.
-    - Jack.
-    - Borhan.
 - intent: goodbye
   examples: |
     - cu
@@ -78,26 +76,26 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-- intent: out_of_scope
-  examples: |
-    - I want to order food
-    - What is 2 + 2?
-    - Who's the US President?
-- intent: tell_appointment_cancel_info
-  examples: |
-    - Patient's full name: Date of Birth: IC number (Malaysian): 
-    - Patient's full name: dsdsd Date of Birth: fgfgdfg IC number (Malaysian): 3423423424 
-    - Patient's full name: Goot, Date of Birth: 23/33/4444, IC number (Malaysian): 23232323 
-- intent: tell_other_service_info
-  examples: |
-    - Patient's full name: Date of Birth: Email address: Contact Number: Type of request / enquiry:
-    - Patient's full name: Kabir Date of Birth: 01/10/2022 Email address: g@p.com Contact Number: 23232323323 Type of request / enquiry: dfdkfdfkfdjfk dkfjdjfdks 
-    - Patient's full name: Togor Date of Birth: 01/12/2022 Email address: p@q.com Contact Number: 90876655633 Type of request / enquiry: fdjfdjfkdiejifjdkfjdkfdk
+# - intent: out_of_scope
+#   examples: |
+#     - I want to order food
+#     - What is 2 + 2?
+#     - Who's the US President?
 - intent: tell_appointment_info
   examples: |
-    - Patient's full name: Date of Birth: IC number (Malaysian): Gender: Email address: Contact Number: 1st choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm_ 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any): Medical condition: 
-    - Patient's full name: Date of Birth: IC number (Malaysian): Gender: Email address: Contact Number: 
-    - Patient's full name: Date of Birth: IC number (Malaysian): 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any): Medical condition:
+    - "Patient's full name:  Date of Birth:  IC number (Malaysian):  Gender:  Email address:  Contact Number:  1st choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm_ 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any):  Medical condition: ."
+    - "Patient's full name:  Date of Birth:  IC number (Malaysian):  Gender:  Email address:  Contact Number:  1st choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm_ 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any): Medical condition: ."
+    - "Patient's full name:  Date of Birth: IC number (Malaysian):  Gender:  Email address: Contact Number:  1st choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm_ 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any): Medical condition: ."
+- intent: tell_other_service_info
+  examples: |
+    - "Patient's full name:  Date of Birth:  Email address:  Contact Number:  Type of request / enquiry: " 
+    - "Patient's full name:  Date of Birth:  Email address:  Contact Number:  Type of request / enquiry: "
+    - "Patient's full name:  Date of Birth:  Email address:  Contact Number:  Type of request / enquiry: "
+- intent: tell_appointment_cancel_info
+  examples: |
+    - "Patient's full name:  Date of Birth:  IC number (Malaysian): " 
+    - "Patient's full name:  Date of Birth:  IC number (Malaysian): "
+    - "Patient's full name:  Date of Birth:  IC number (Malaysian): " 
 - intent: human_handoff
   examples: |
     - I want a human

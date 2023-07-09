@@ -79,7 +79,7 @@ stories:
 - story: wrong_other_services_path
   steps:
   - checkpoint: check_other_service_info
-  - intent: nlu_fallback
+  - intent: nlu_fallback/
   - action: utter_other_services_correct_info_formate
   - checkpoint: check_other_service_info
 
