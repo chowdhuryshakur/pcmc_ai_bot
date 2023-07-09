@@ -42,7 +42,7 @@ slots:
       entity: slot
 responses:
   utter_ask_name:
-  - text: Hi, Hope you are having a good day. How it is going there?
+  - text: Hi, Hope you are having a good day. Could we start with your name please?
   utter_greet:
   - text: "Hi {name}\n\nWelcome to *Prince Court Medical Centre* WhatsApp Appointment.\n\n_This Platform is strictly for appointment booking only._\n\nI am your *Virtual Assistant*. How may I assist you?"
     buttons:
