@@ -115,7 +115,7 @@ responses:
   utter_other_services_confirm:
   - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nKindly be informed, we have forward your request / enquiry to John from HR depertment for their generous support and they will be in contact with you in due course.\n\nWe highly appreciate your kind understanding."
   utter_appointment_correct_info_format:
-  - text: "Please use correct format of patient's details.\nYou can use the below example to put patient's details.\n\nPatient's full name: *John Doe*\nDate of Birth: *31 May 1990*\nIC number (Malaysian): *232455*\nGender: *Male*\nEmail address: *exm@exmpl.com*\nContact Number: *03-34343434*\n1st choice appointment date @ time: _02/08/2023 @ 7:30 pm_\n2nd choice appointment date @ time: _04/08/2023 @ 7:30 pm_\nPreferred Doctor (if any): *Dr. Fredric*\nMedical condition: *Fever and cold*"
+  - text: "Please use correct format of patient's details.\nYou can use the below example to put patient's details.\n\nPatient's full name: *John Doe*\nDate of Birth: *31 May 1990*\nIC number (Malaysian): *232455*\nGender: *Male*\nEmail address: *exm@exmpl.com*\nContact Number: *03-34343434*\n1st choice appointment date @ time: *_02/08/2023 @ 7:30 pm_*\n2nd choice appointment date @ time: *_04/08/2023 @ 7:30 pm_*\nPreferred Doctor (if any): *Dr. Fredric*\nMedical condition: *Fever and cold*"
   utter_correct_appointment_cancel_info_formate:
   - text: "Please use correct format of information.\nYou can use the below example to put appointment details.\n\nPatient's full name: *John Doe*\nDate of Birth: *31 May 1990*\nIC number (Malaysian): *232455*"
   utter_other_services_correct_info_formate:
