@@ -1,10 +1,9 @@
 version: '3.1'
 intents:
-- insurance
 - admission
-- billing_refund
 - affirm
 - appointment
+- billing_refund
 - bot_challenge
 - cancel_appointment
 - complaint
@@ -15,25 +14,101 @@ intents:
 - health_screening
 - human_handoff
 - inpatient_insurance
+- insurance
 - job_vacancy
 - medical_record
 - occupational_screening
 - outpatient_insurance
+- proceed
 - reschedule_appointment
 - schedule_new_appointment
+- tell_dob
+- tell_doctor
+- tell_email
+- tell_enquiry
+- tell_full_name
+- tell_gender
+- tell_icnum
 - tell_name
-- tell_appointment_info
-- tell_appointment_cancel_info
-- tell_other_service_info
+- tell_phone
+- tell_scheduledateone
+- tell_scheduledatetwo
+- tell_symptomp
 entities:
+- gender
+- phone
 - name
 - slot
+- full_name
+- dob
+- icnum
+- email
+- doctor
+- symptomp
+- enquiry
+- scheduledateone
+- scheduledatetwo
 slots:
   name:
     type: text
     mappings:
     - type: from_entity
       entity: name
+  full_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: full_name
+  dob:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: dob
+  icnum:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: icnum
+  gender:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: gender
+  email:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email
+  phone:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: phone
+  doctor:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: doctor
+  symptomp:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: symptomp
+  enquiry:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: enquiry
+  scheduledateone:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: scheduledateone
+  scheduledatetwo:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: scheduledatetwo
   slot:
     type: text
     mappings:
@@ -43,7 +118,20 @@ responses:
   utter_ask_name:
   - text: Hi, Hope you are having a good day. Could we start with your name please?
   utter_greet:
-  - text: "Hi {name}\n\nWelcome to *Prince Court Medical Centre* WhatsApp Appointment.\n\n_This Platform is strictly for appointment booking only._\n\nI am your *Virtual Assistant*. How may I assist you?"
+  - text: |-
+      Hi {name}
+
+      Welcome to *Prince Court Medical Centre* WhatsApp Appointment.
+
+      _This Platform is strictly for appointment booking only._
+
+      I am your *Virtual Assistant*. Please tap the 'Proceed' button for further assistance.
+    image: https://princecourt.com/wp-content/themes/pcmc/assets/images/logo-2x.png
+    buttons:
+    - title: Proceed
+      payload: /proceed
+  utter_Services:
+  - text: 'Please take a moment to select your desired service from the options:'
     buttons:
     - title: Appointment
       payload: /appointment
@@ -87,55 +175,162 @@ responses:
     - title: Job Vacancy
       payload: /job_vacancy
   utter_ask_appointment_cancel_info:
-  - text: "Please allow us to have at least 1 working day for the arrangement to cancel your appointment.\n\nFor appointment cancellation, kindly provide us patient's details:\n\n*Patient's full name:*\n*Date of Birth:*\n*IC number (Malaysian):*"
+  - text: |-
+      Please allow us to have at least 1 working day for the arrangement to cancel your appointment.
+
+      For appointment cancellation, kindly provide us patient's details:
+
+      *Patient's full name:*
+      *Date of Birth:*
+      *IC number (Malaysian):* 
+
+      Let's go!
   utter_appointment_cancel:
-  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nAs per your request, we have cancelled your appointment."
+  - text: |-
+      Dear {name}
+
+      Warmest Greeting from Prince Court Medical Centre.
+
+      Thank you for choosing us as your preferred choice of healthcare service provider.
+
+      As per your request, we have cancelled your appointment.
   utter_goodbye:
-  - text: "Warmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider."
+  - text: |-
+      Warmest Greeting from Prince Court Medical Centre.
+
+      Thank you for choosing us as your preferred choice of healthcare service provider.
   utter_iamabot:
   - text: I'm a virtual assistant here to assist with your PCMC support.
-  # utter_out_of_scope:
-  # - text: Sorry, I can't handle that request. For connecting to a human agent please click the button.
-  #   buttons:
-  #   - title: Live human agent
-  #     payload: https://t.me/wipdatabotchannel
   utter_handoff:
   - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
   utter_please_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
   utter_ask_appointment_info:
-  - text: "Please allow us to have at least 1 working day for the arrangement to confirm an appointment.\n\nFor appointment booking, kindly provide us patient's details:\n\n*Patient's full name:*\n*Date of Birth:*\n*IC number (Malaysian):*\n*Gender:*\n*Email address:*\n*Contact Number:*\n*1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_\n*Preferred Doctor (if any):*\n*Medical condition:*"
+  - text: |-
+      Please allow us to have at least 1 working day for the arrangement to confirm an appointment.
+
+      For appointment booking, kindly provide us patient's details:
+
+      *Patient's full name:*
+      *Date of Birth:*
+      *IC number (Malaysian):*
+      *Gender:*
+      *Email address:*
+      *Contact Number:*
+      *1st choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_
+      *2nd choice appointment date @ time:*_dd/mm/yyyy @ h:mm am/pm_
+      *Preferred Doctor (if any):*
+      *Medical condition:* 
+
+      Let's go!
   utter_appointment_confirm:
-  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nAs per your request, please find below appointment confirmation:\n\n*Patient's full name:* Ali Kassim\n*Attending Doctor:* Dr. Prasad\n*Appointment Date @ Time:* 10th July 2023 @ 7:30pm\n*Insurance Assistant Direct Line:* 03-21600877\n*Insurance Assistant Fax Line:* 03-27823377\n\nBelow are useful reminder to ensure the registration process is smooth during your clinic visit with your Doctor at Prince Court Medical Centre.\n-   Kindly register at the Outpatient Specialist Clinic Registration Counter at Level 1, Lobby 2 before proceeding to the clinic. (Please allow 15 minutes for registration to be on time for your appointment)\n-   Please ensure that you have pre-arranged with your insurance Provider/Third Party Administrator or Corporate HR for your letter of guarantee of payment and kindly bring along this letter of guarantee to avoid any delay. (Prince Court Medical Centre must be an acceptable panel hospital to your insurance/TPA/Corporate HR for a letter of Guarantee to be issued)\n-   Please bring along any referral letter from your current Doctor (e.g. G.P) or previous test results done at another hospitals, for our attending doctor's reference."
+  - text: |-
+      Dear {name}
+
+      Warmest Greeting from Prince Court Medical Centre.
+
+      Thank you for choosing us as your preferred choice of healthcare service provider.
+
+      As per your request, please find below appointment confirmation:
+
+      *Patient's full name:* {full_name}
+      *Attending Doctor:* {doctor}
+      *Appointment Date @ Time:* {scheduledateone}
+      *Insurance Assistant Direct Line:* 03-21600877
+      *Insurance Assistant Fax Line:* 03-27823377
+
+      Below are useful reminder to ensure the registration process is smooth during your clinic visit with your Doctor at Prince Court Medical Centre.
+      -   Kindly register at the Outpatient Specialist Clinic Registration Counter at Level 1, Lobby 2 before proceeding to the clinic. (Please allow 15 minutes for registration to be on time for your appointment)
+      -   Please ensure that you have pre-arranged with your insurance Provider/Third Party Administrator or Corporate HR for your letter of guarantee of payment and kindly bring along this letter of guarantee to avoid any delay. (Prince Court Medical Centre must be an acceptable panel hospital to your insurance/TPA/Corporate HR for a letter of Guarantee to be issued)
+      -   Please bring along any referral letter from your current Doctor (e.g. G.P) or previous test results done at another hospitals, for our attending doctor's reference.
   utter_ask_other_services_info:
-  - text: "Please allow us to have at least 1 working day for the arrangement to cancel your appointment.\n\n_Kindly to be inform, we will forward your request/enquiry to our specific Department for their kind assistance._\n\nIn order for that, kindly provide us with the below details for them to reply to you directly.\n\n*Patient's full name:*\n*Date of Birth:*\n*Email address:*\n*Contact Number:*\n*Type of request / enquiry:*\n"
+  - text: |-
+      Please allow us to have at least 1 working day for the arrangement to cancel your appointment.
+
+      _Kindly to be inform, we will forward your request/enquiry to our specific Department for their kind assistance._
+
+      In order for that, kindly provide us with the below details for them to reply to you directly.
+
+      *Patient's full name:*
+      *Date of Birth:*
+      *Email address:*
+      *Contact Number:*
+      *Type of request / enquiry:* 
+
+      Let's go!
   utter_other_services_confirm:
-  - text: "Dear {name}\n\nWarmest Greeting from Prince Court Medical Centre.\n\nThank you for choosing us as your preferred choice of healthcare service provider.\n\nKindly be informed, we have forward your request / enquiry to Mr. Ali Kassim from HR depertment for their generous support and they will be in contact with you in due course.\n\nWe highly appreciate your kind understanding."
-  utter_appointment_correct_info_format:
-  - text: "Please use correct format of patient's details.\nYou can use the below example to put patient's details.\n\nPatient's full name: *Ali Kassim*\nDate of Birth: *2 June 1978*\nIC number (Malaysian): *780602-10-6679*\nGender: *Male*\nEmail address: *ali@gmail.com*\nContact Number: *018-99028997*\n1st choice appointment date @ time: *_02/08/2023 @ 2:00 pm_*\n2nd choice appointment date @ time: *_04/08/2023 @ 9:00 am_*\nPreferred Doctor (if any): *Dr. Prasad*\nMedical condition: *Gastric*"
-  utter_correct_appointment_cancel_info_formate:
-  - text: "Please use correct format of information.\nYou can use the below example to put appointment details.\n\nPatient's full name: *Ali Kassim*\nDate of Birth: *2 June 1978*\nIC number (Malaysian): *780602-10-6679*"
-  utter_other_services_correct_info_formate:
-  - text: "Please use correct format of information.\nYou can use the below example to put your details.\n\nPatient's full name: *Ali Kassim*\nDate of Birth: *2 June 1978*\nEmail address: *ali@gmail.com*\nContact Number: *018-99028997*\nType of request / enquiry: *I want to know about my bill details.*."
-  
+  - text: |-
+      Dear {name}
+
+      Warmest Greeting from Prince Court Medical Centre.
+
+      Thank you for choosing us as your preferred choice of healthcare service provider.
+
+      Kindly be informed, we have forward your request / enquiry to Mr. Ali Kassim from HR depertment for their generous support and they will be in contact with you in due course.
+
+      We highly appreciate your kind understanding.
+  utter_ask_full_name:
+  - text: Could you please provide the patient's full name?
+  utter_ask_dob:
+  - text: May I know the patient's date of birth, please? (DD/MM/YYYY)
+  utter_ask_icnum:
+  - text: Please provide the patient's IC number.
+  utter_ask_email:
+  - text: Please provide the patient's email address.
+  utter_ask_phone:
+  - text: Please provide the patient's phone number.
+  utter_ask_doctor:
+  - text: Does the patient have any preferred doctor? If yes, please provide the name of the doctor.
+  utter_ask_symptomp:
+  - text: Could you please provide some information about the patient's medical condition?
+  utter_ask_enquiry:
+  - text: Please let me know about your enquiry or request.
+  utter_ask_gender:
+  - text: Please indicate the patient's gender.
+    buttons:
+    - title: Male
+      payload: male
+    - title: Female
+      payload: female
+    - title: Others
+      payload: others
+  utter_ask_scheduledateone:
+  - text: When would you like to schedule the appointment? Please provide the preferred date and time.
+  utter_ask_scheduledatetwo:
+  - text: If the preferred schedule is not available, do you have an alternative date and time?
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
-- utter_ask_appointment_cancel_info
-- utter_correct_appointment_cancel_info_formate
+- action_tell_dob
+- action_tell_doctor
+- action_tell_email
+- action_tell_full_name
+- action_tell_icnum
+- action_tell_name
+- action_tell_scheduledateone
+- action_tell_scheduledatetwo
+- action_tell_symptomp
+- action_tell_enquiry
+- utter_Services
 - utter_appointment_cancel
-- utter_appointment_options
-- utter_ask_name
-- utter_ask_appointment_info
 - utter_appointment_confirm
+- utter_appointment_options
+- utter_ask_appointment_cancel_info
+- utter_ask_appointment_info
+- utter_ask_dob
+- utter_ask_doctor
+- utter_ask_email
+- utter_ask_enquiry
+- utter_ask_full_name
+- utter_ask_gender
+- utter_ask_icnum
+- utter_ask_name
 - utter_ask_other_services_info
-- utter_other_services_confirm
-- utter_general_custom
+- utter_ask_phone
+- utter_ask_scheduledateone
+- utter_ask_scheduledatetwo
+- utter_ask_symptomp
 - utter_goodbye
 - utter_greet
-- utter_please_rephrase
-- action_tell_name
-- utter_appointment_correct_info_format
-- utter_other_services_correct_info_formate
-# - action_utter_doctor
+- utter_other_services_confirm

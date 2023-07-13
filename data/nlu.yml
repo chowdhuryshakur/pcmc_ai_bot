@@ -21,6 +21,116 @@ nlu:
     - namehide Dipu.
     - namehide Shitu.
     - namehide Soccur.
+    - namehide Noman
+    - namehide Kiron
+- intent: tell_full_name
+  examples: |
+    - fullname Ena.
+    - fullname Bonni.
+    - fullname Kuper.
+    - fullname Kabir
+    - fullname kiron mala
+- intent: tell_dob
+  examples: |
+    - "dateOfBirth 12/12/2013."
+    - "dateOfBirth is 04/01/1997."
+    - "dateOfBirth 1/1/1981."
+    - "19/10/1902"
+    - "dateOfBirth 19/04/1902"
+    - "dateOfBirth 20/04/1912"
+    - "dateOfBirth 17/04/1922"
+    - "dateOfBirth 18/04/1932"
+    - "dateOfBirth 17/04/1942"
+    - "dateOfBirth 18/04/1952"
+    - "dateOfBirth 19/04/1962"
+    - "dateOfBirth 20/04/1972"
+    - "dateOfBirth 21/04/1982"
+    - "dateOfBirth 22/04/1992"
+    - "dateOfBirth 23/04/1902"
+    - "dateOfBirth 24/04/1902"
+    - "dateOfBirth 25/04/1902"
+    - "dateOfBirth 26/04/1902"
+    - "dateOfBirth 27/04/1902"
+    - "dateOfBirth 28/04/1902"
+    - "dateOfBirth 29/04/1902"
+- intent: tell_icnum
+  examples: |
+    - "icnumber 7438874384."
+    - "icnumber is 43-434-43434."
+    - "icnumber 4343443434."
+    - "12-332-2233"
+    - "icnumber 343-323-2222"
+    - "icnumber 664-323-4422"
+    - "icnumber 343-111-2244"
+    - "icnumber 566-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 555-111-2244"
+    - "icnumber 675-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 089-111-2244"
+    - "icnumber 787-111-2244"
+    - "icnumber 787-111-2244"
+    - "icnumber 676-111-2244"
+    - "icnumber 4664-111-2244"
+    - "icnumber 5654-111-2244"
+    - "icnumber 4543-111-2244"
+    - "icnumber 343-111-2244"
+    - "icnumber 444-111-2244"
+    - "icnumber 556-111-2244"
+- intent: tell_email
+  examples: |
+    - "emaill name@gmail.com."
+    - "emaill sabin@opos.com."
+    - "emaill xyz@ymail.com."
+    - "emaill gh@ff.com"
+- intent: tell_symptomp
+  examples: |
+    - symptompp fever.
+    - symptompp Cold.
+    - symptompp Back Pain.
+    - symptompp fever
+- intent: tell_enquiry
+  examples: |
+    - enquiryy i need a report.
+    - enquiryy is there any vacancy open?
+    - enquiryy Alas! What is this.
+- intent: tell_doctor
+  examples: |
+    - "doctorr Dr. Pravash."
+    - "doctorr Dr. Akash"
+    - "doctorr Dr. Pradah"
+    - "doctorr Dr. Haram"
+- intent: tell_scheduledateone
+  examples: |
+    - "scheduleDateonee 01/02/2023 @ 02:12 pm."
+    - "scheduleDateonee 12/03/2023 @ 02:12 am."
+    - "scheduleDateonee 13/04/2023 @ 02:12 am."
+    - "15/04/2023 @ 03:12 am."
+    - "scheduleDateonee 01/02/2023 @ 02:12 pm"
+    - "scheduleDateonee 02/04/2023 @ 02:13 pm"
+- intent: tell_scheduledatetwo
+  examples: |
+    - "scheduleDatetwoo 12/03/2023 @ 02:03 am."
+    - "scheduleDatetwoo 13/03/2023 @ 02:12 am."
+    - "scheduleDatetwoo 01/02/2023 @ 02:12 pm."
+    - "22/04/2023 @ 05:16 pm."
+    - "scheduleDatetwoo 12/03/2023 @ 02:03 am"
+    - "scheduleDatetwoo 30/06/2023 @ 12:03 pm"
+- intent: tell_phone
+  examples: |
+    - number is [01843727741](phone)
+    - My number is [01843727741](phone)
+    - My phone number is [4637457382](phone)
+    - [33315327130](phone)
+    - [83283332838](phone)
+- intent: tell_gender
+  examples: |
+    - [male](gender).
+    - [others](gender).
+    - [female](gender).
+    - [others](gender)
+    - [female](gender)
 - intent: goodbye
   examples: |
     - cu
@@ -59,26 +169,6 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-# - intent: out_of_scope
-#   examples: |
-#     - I want to order food
-#     - What is 2 + 2?
-#     - Who's the US President?
-- intent: tell_appointment_info
-  examples: |
-    - "Patient's full name:  Date of Birth:  IC number (Malaysian):  Gender:  Email address:  Contact Number:  1st choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm_ 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any):  Medical condition: ."
-    - "Patient's full name:  Date of Birth:  IC number (Malaysian):  Gender:  Email address:  Contact Number:  1st choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm_ 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any): Medical condition: ."
-    - "Patient's full name:  Date of Birth: IC number (Malaysian):  Gender:  Email address: Contact Number:  1st choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm_ 2nd choice appointment date @ time: dd/mm/yyyy @ h:mm am/pm Preferred Doctor (if any): Medical condition: ."
-- intent: tell_other_service_info
-  examples: |
-    - "Patient's full name:  Date of Birth:  Email address:  Contact Number:  Type of request / enquiry: " 
-    - "Patient's full name:  Date of Birth:  Email address:  Contact Number:  Type of request / enquiry: "
-    - "Patient's full name:  Date of Birth:  Email address:  Contact Number:  Type of request / enquiry: "
-- intent: tell_appointment_cancel_info
-  examples: |
-    - "Patient's full name:  Date of Birth:  IC number (Malaysian): " 
-    - "Patient's full name:  Date of Birth:  IC number (Malaysian): "
-    - "Patient's full name:  Date of Birth:  IC number (Malaysian): " 
 - intent: human_handoff
   examples: |
     - i am confused
@@ -140,3 +230,36 @@ nlu:
     - connect me to a real person
     - I need a real person
     - let me speak to a real person please
+- regex: phone
+  examples: |
+    - \d{10,12}
+- regex: tell_dob
+  examples: |
+    - dateOfBirth
+- regex: tell_doctor
+  examples: |
+    - doctorr
+- regex: tell_email
+  examples: |
+    - emaill
+- regex: tell_enquiry
+  examples: |
+    - enquiryy
+- regex: tell_full_name
+  examples: |
+    - fullname
+- regex: tell_icnum
+  examples: |
+    - icnumber
+- regex: tell_name
+  examples: |
+    - namehide
+- regex: tell_scheduledateone
+  examples: |
+    - scheduleDateonee
+- regex: tell_scheduledatetwo
+  examples: |
+    - scheduleDatetwoo
+- regex: tell_symptomp
+  examples: |
+    - symptompp

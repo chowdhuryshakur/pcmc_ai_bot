@@ -19,41 +19,80 @@ stories:
     - intent: reschedule_appointment
     - intent: health_screening
   - action: utter_ask_appointment_info
-  - checkpoint: check_appointment_info
-
-- story: right_info_appointment_path
-  steps:
-  - checkpoint: check_appointment_info
-  - intent: tell_appointment_info
+  - action: utter_ask_full_name
+  - intent: tell_full_name
+  - action: action_tell_full_name
+  - slot_was_set:
+    - full_name: KIRON MALA
+  - action: utter_ask_dob
+  - intent: tell_dob
+  - action: action_tell_dob
+  - slot_was_set:
+    - dob: 19/04/1902
+  - action: utter_ask_gender
+  - intent: tell_gender
+    entities:
+    - gender: female
+  - slot_was_set:
+    - gender: female
+  - action: utter_ask_icnum
+  - intent: tell_icnum
+  - action: action_tell_icnum
+  - slot_was_set:
+    - icnum: 343-323-2222
+  - action: utter_ask_email
+  - intent: tell_email
+  - action: action_tell_email
+  - action: utter_ask_phone
+  - intent: tell_phone
+    entities:
+    - phone: 0896786554
+  - slot_was_set:
+    - phone: 0896786554
+  - action: utter_ask_doctor
+  - intent: tell_doctor
+  - action: action_tell_doctor
+  - slot_was_set:
+    - doctor: 19/04/1902
+  - action: utter_ask_symptomp
+  - intent: tell_symptomp
+  - action: action_tell_symptomp
+  - slot_was_set:
+    - symptomp: 19/04/1902
+  - action: utter_ask_scheduledateone
+  - intent: tell_scheduledateone
+  - action: action_tell_scheduledateone
+  - slot_was_set:
+    - scheduledateone: 19/04/1902
+  - action: utter_ask_scheduledatetwo
+  - intent: tell_scheduledatetwo
+  - action: action_tell_scheduledatetwo
+  - slot_was_set:
+    - scheduledatetwo: 19/04/1902
   - action: utter_appointment_confirm
   - action: action_restart
-
-- story: wrong_info_appointment_path
-  steps:
-  - checkpoint: check_appointment_info
-  - intent: nlu_fallback
-  - action: utter_appointment_correct_info_format
-  - checkpoint: check_appointment_info
 
 - story: cancel_appointment_path
   steps:
   - intent: cancel_appointment
   - action: utter_ask_appointment_cancel_info
-  - checkpoint: check_appointment_cancel_info
-
-- story: right_cancel_appointment_path
-  steps:
-  - checkpoint: check_appointment_cancel_info
-  - intent: tell_appointment_cancel_info
+  - action: utter_ask_full_name
+  - intent: tell_full_name
+  - action: action_tell_full_name
+  - slot_was_set:
+    - full_name: KIRON MALA
+  - action: utter_ask_dob
+  - intent: tell_dob
+  - action: action_tell_dob
+  - slot_was_set:
+    - dob: 19/04/1902
+  - action: utter_ask_icnum
+  - intent: tell_icnum
+  - action: action_tell_icnum
+  - slot_was_set:
+    - icnum: 343-323-2222
   - action: utter_appointment_cancel
   - action: action_restart
-
-- story: wrong_cancel_appointment_path
-  steps:
-  - checkpoint: check_appointment_cancel_info
-  - intent: nlu_fallback
-  - action: utter_correct_appointment_cancel_info_formate
-  - checkpoint: check_appointment_cancel_info
 
 - story: other_services_path
   steps:
@@ -67,23 +106,29 @@ stories:
     - intent: admission
     - intent: billing_refund
   - action: utter_ask_other_services_info
-  - checkpoint: check_other_service_info
-
-- story: right_other_services_path
-  steps:
-  - checkpoint: check_other_service_info
-  - intent: tell_other_service_info
+  - action: utter_ask_full_name
+  - intent: tell_full_name
+  - action: action_tell_full_name
+  - slot_was_set:
+    - full_name: KIRON MALA
+  - action: utter_ask_dob
+  - intent: tell_dob
+  - action: action_tell_dob
+  - slot_was_set:
+    - dob: 19/04/1902
+  - action: utter_ask_email
+  - intent: tell_email
+  - action: action_tell_email
+  - action: utter_ask_phone
+  - intent: tell_phone
+    entities:
+    - phone: 0896786554
+  - slot_was_set:
+    - phone: 0896786554
+  - action: utter_ask_enquiry
+  - intent: tell_enquiry
+  - action: action_tell_enquiry
+  - slot_was_set:
+    - enquiry: 19/04/1902
   - action: utter_other_services_confirm
   - action: action_restart
-
-- story: wrong_other_services_path
-  steps:
-  - checkpoint: check_other_service_info
-  - intent: nlu_fallback/
-  - action: utter_other_services_correct_info_formate
-  - checkpoint: check_other_service_info
-
-- story: Ask_the_user_to_rephrase_whenever_they_send_a_message_with_low_NLU_confidence
-  steps:
-  - intent: nlu_fallback
-  - action: utter_please_rephrase

@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-gender",
+      "2": "I-gender",
+      "3": "L-gender",
+      "4": "U-gender",
+      "5": "B-phone",
+      "6": "I-phone",
+      "7": "L-phone",
+      "8": "U-phone",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-gender": 1,
+      "I-gender": 2,
+      "L-gender": 3,
+      "U-gender": 4,
+      "B-phone": 5,
+      "I-phone": 6,
+      "L-phone": 7,
+      "U-phone": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]
