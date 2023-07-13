@@ -12,6 +12,8 @@ stories:
     - name: KUTER
   - action: utter_greet
 
+
+##====appointment story start ======##
 - story: happy_appointment_path
   steps:
   - or:
@@ -19,6 +21,11 @@ stories:
     - intent: reschedule_appointment
     - intent: health_screening
   - action: utter_ask_appointment_info
+  - checkpoint: name_and_dob_checkpoint_for_appointment_path
+
+- story: name_and_dob
+  steps:
+  - checkpoint: name_and_dob_checkpoint_for_appointment_path
   - action: utter_ask_full_name
   - intent: tell_full_name
   - action: action_tell_full_name
@@ -29,17 +36,22 @@ stories:
   - action: action_tell_dob
   - slot_was_set:
     - dob: 19/04/1902
+  - checkpoint: ic_number_taking_checkpoint
+
+- story: ic_number_taking
+  steps:
+  - checkpoint: ic_number_taking_checkpoint
   - action: utter_ask_gender
   - intent: tell_gender
     entities:
     - gender: female
   - slot_was_set:
     - gender: female
-  - action: utter_ask_icnum
-  - intent: tell_icnum
-  - action: action_tell_icnum
-  - slot_was_set:
-    - icnum: 343-323-2222
+  - checkpoint: email_phone_checkpoint_for_appointment_path
+
+- story: email_phone
+  steps:
+  - checkpoint: email_phone_checkpoint_for_appointment_path
   - action: utter_ask_email
   - intent: tell_email
   - action: action_tell_email
@@ -72,10 +84,19 @@ stories:
   - action: utter_appointment_confirm
   - action: action_restart
 
+##====appointment story end ======##
+
+##====cancel appointment story start ======##
+
 - story: cancel_appointment_path
   steps:
   - intent: cancel_appointment
   - action: utter_ask_appointment_cancel_info
+  - checkpoint: name_and_dob_checkpoint_for_cancel_appointment_path
+
+- story: name_and_dob_cancel_appointment_path
+  steps:
+  - checkpoint: name_and_dob_checkpoint_for_cancel_appointment_path
   - action: utter_ask_full_name
   - intent: tell_full_name
   - action: action_tell_full_name
@@ -86,6 +107,11 @@ stories:
   - action: action_tell_dob
   - slot_was_set:
     - dob: 19/04/1902
+  - checkpoint: ic_number_taking_checkpoint_for_cancel_appointment_pat
+
+- story: ic_number_taking_cancel_appointment_path
+  steps:
+  - checkpoint: ic_number_taking_checkpoint_for_cancel_appointment_pat
   - action: utter_ask_icnum
   - intent: tell_icnum
   - action: action_tell_icnum
@@ -93,6 +119,10 @@ stories:
     - icnum: 343-323-2222
   - action: utter_appointment_cancel
   - action: action_restart
+
+##====cancel appointment story end ======##
+
+##====other service story start ======##
 
 - story: other_services_path
   steps:
@@ -106,6 +136,11 @@ stories:
     - intent: admission
     - intent: billing_refund
   - action: utter_ask_other_services_info
+  - checkpoint: name_and_dob_checkpoint_for_other_services
+
+- story: name_and_dob_for_other_services
+  steps:
+  - checkpoint: name_and_dob_checkpoint_for_other_services
   - action: utter_ask_full_name
   - intent: tell_full_name
   - action: action_tell_full_name
@@ -116,6 +151,11 @@ stories:
   - action: action_tell_dob
   - slot_was_set:
     - dob: 19/04/1902
+  - checkpoint: email_phone_checkpoint_for_other_services
+
+- story: email_phone_for_other_services
+  steps:
+  - checkpoint: email_phone_checkpoint_for_other_services
   - action: utter_ask_email
   - intent: tell_email
   - action: action_tell_email
@@ -129,6 +169,8 @@ stories:
   - intent: tell_enquiry
   - action: action_tell_enquiry
   - slot_was_set:
-    - enquiry: 19/04/1902
+    - enquiry: I need help.
   - action: utter_other_services_confirm
   - action: action_restart
+
+##====other service story end ======##
