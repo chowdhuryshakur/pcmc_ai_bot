@@ -178,7 +178,7 @@ responses:
   - text: |-
       Please allow us to have at least 1 working day for the arrangement to cancel your appointment.
 
-      For appointment cancellation, kindly provide us patient's details:
+      For appointment cancellation, we would need to collect the data as below. We will guide you through this process.
 
       *Patient's full name:*
       *Date of Birth:*
@@ -209,7 +209,7 @@ responses:
   - text: |-
       Please allow us to have at least 1 working day for the arrangement to confirm an appointment.
 
-      For appointment booking, kindly provide us patient's details:
+      For appointment bookings, we would need to collect the data as below. We will guide you through this process.
 
       *Patient's full name:*
       *Date of Birth:*
@@ -231,7 +231,7 @@ responses:
 
       Thank you for choosing us as your preferred choice of healthcare service provider.
 
-      As per your request, please find below appointment confirmation:
+      As per your request, please find below appointment details:
 
       *Patient's full name:* {full_name}
       *Attending Doctor:* {doctor}
@@ -249,7 +249,7 @@ responses:
 
       _Kindly to be inform, we will forward your request/enquiry to our specific Department for their kind assistance._
 
-      In order for that, kindly provide us with the below details for them to reply to you directly.
+      In order for that, we would need to collect the data as below. We will guide you through this process.
 
       *Patient's full name:*
       *Date of Birth:*
@@ -278,7 +278,7 @@ responses:
   utter_ask_email:
   - text: Please provide the patient's email address.
   utter_ask_phone:
-  - text: Please provide the patient's phone number.
+  - text: Please provide the patient's phone number. (Phone number must be within 10 to 12 digit.)
   utter_ask_doctor:
   - text: Does the patient have any preferred doctor? If yes, please provide the name of the doctor.
   utter_ask_symptomp:
