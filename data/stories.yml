@@ -46,6 +46,11 @@ stories:
   - action: action_tell_icnum
   - slot_was_set:
     - icnum: 343-323-2222
+  - checkpoint: continuring_app_flow_checkpoint
+
+- story: continuring_app_flowic_number_taking
+  steps:
+  - checkpoint: continuring_app_flow_checkpoint
   - action: utter_ask_gender
   - intent: tell_gender
     entities:
