@@ -71,6 +71,11 @@ stories:
     - phone: 0896786554
   - slot_was_set:
     - phone: 0896786554
+  - checkpoint: continuing_rest_appointment_path 
+
+- story: rest_appointment_path
+  steps:
+  - checkpoint: continuing_rest_appointment_path
   - action: utter_ask_doctor
   - intent: tell_doctor
   - action: action_tell_doctor
@@ -93,6 +98,7 @@ stories:
     - scheduledatetwo: 19/04/1902
   - action: utter_appointment_confirm
   - action: action_restart
+  
 
 ##====appointment story end ======##
 
@@ -127,6 +133,11 @@ stories:
   - action: action_tell_icnum
   - slot_was_set:
     - icnum: 343-323-2222
+  - checkpoint: continuing_cancel_appointment_path
+
+- story: rest_cancel_appointment_path
+  steps:
+  - checkpoint: continuing_cancel_appointment_path
   - action: utter_appointment_cancel
   - action: action_restart
 
@@ -175,6 +186,11 @@ stories:
     - phone: 0896786554
   - slot_was_set:
     - phone: 0896786554
+  - checkpoint: continuing_rest_other_services_path
+
+- story: rest_other_services_path
+  steps:
+  - checkpoint: continuing_rest_other_services_path
   - action: utter_ask_enquiry
   - intent: tell_enquiry
   - action: action_tell_enquiry
@@ -182,5 +198,6 @@ stories:
     - enquiry: I need help.
   - action: utter_other_services_confirm
   - action: action_restart
+ 
 
 ##====other service story end ======##
