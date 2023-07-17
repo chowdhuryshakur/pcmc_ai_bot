@@ -78,6 +78,31 @@ nlu:
     - "icnumber 343-111-2244"
     - "icnumber 444-111-2244"
     - "icnumber 556-111-2244"
+- intent: tell_icnum_appointment
+  examples: |
+    - "appoic 7438874384."
+    - "appoic is 43-434-43434."
+    - "appoic 4343443434."
+    - "12-332-2233"
+    - "appoic 3433234-323-2222"
+    - "appoic 664-323-4422"
+    - "appoic 3433234-111-2244"
+    - "appoic 566-111-2244"
+    - "appoic 3433234-111-2244"
+    - "appoic 555-111-2244"
+    - "appoic 675-111-2244"
+    - "appoic 3433234-111-2244"
+    - "appoic 343-111-2244"
+    - "appoic 089-111-2244"
+    - "appoic 787-111-2244"
+    - "appoic 787-111-2244"
+    - "appoic 676-111-2244"
+    - "appoic 4664-111-2244"
+    - "appoic 5654-111-2244"
+    - "appoic 4543-111-2244"
+    - "appoic 343-111-2244"
+    - "appoic 444-111-2244"
+    - "appoic 556-111-2244"
 - intent: tell_email
   examples: |
     - "emaill name@gmail.com."
@@ -251,6 +276,9 @@ nlu:
 - regex: tell_icnum
   examples: |
     - icnumber
+- regex: tell_icnum_appointment
+  examples: |
+    - appoiic
 - regex: tell_name
   examples: |
     - namehide

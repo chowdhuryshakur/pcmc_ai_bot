@@ -34,6 +34,7 @@ intents:
 - tell_scheduledateone
 - tell_scheduledatetwo
 - tell_symptomp
+- tell_icnum_appointment
 entities:
 - gender
 - phone
@@ -273,6 +274,8 @@ responses:
   - text: Could you please provide the patient's full name?
   utter_ask_dob:
   - text: May I know the patient's date of birth, please? (DD/MM/YYYY)
+  utter_ask_icnum_appointment:
+  - text: Please provide the patient's IC number for creating the appointment.
   utter_ask_icnum:
   - text: Please provide the patient's IC number.
   utter_ask_email:
@@ -302,11 +305,13 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
+- action_tell_icnum_appointment
 - action_tell_dob
 - action_tell_doctor
 - action_tell_email
 - action_tell_full_name
 - action_tell_icnum
+- utter_ask_icnum_appointment
 - action_tell_name
 - action_tell_scheduledateone
 - action_tell_scheduledatetwo
