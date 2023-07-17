@@ -123,21 +123,21 @@ stories:
   - action: action_tell_dob
   - slot_was_set:
     - dob: 19/04/1902
-  - checkpoint: ic_number_taking_checkpoint_for_cancel_appointment_pat
+  - checkpoint: taking_ic_for_cancel_appointment_pat
 
 - story: ic_number_taking_cancel_appointment_path
   steps:
-  - checkpoint: ic_number_taking_checkpoint_for_cancel_appointment_pat
+  - checkpoint: taking_ic_for_cancel_appointment_pat
   - action: utter_ask_icnum
   - intent: tell_icnum
   - action: action_tell_icnum
   - slot_was_set:
     - icnum: 343-323-2222
-  - checkpoint: continuing_cancel_appointment_path
+  - checkpoint: cancel_appointment_path_continuing
 
 - story: rest_cancel_appointment_path
   steps:
-  - checkpoint: continuing_cancel_appointment_path
+  - checkpoint: cancel_appointment_path_continuing
   - action: utter_appointment_cancel
   - action: action_restart
 
