@@ -34,6 +34,7 @@ intents:
 - tell_scheduledateone
 - tell_scheduledatetwo
 - tell_symptomp
+- tell_nationality
 - tell_icnum_appointment
 entities:
 - gender
@@ -49,6 +50,7 @@ entities:
 - enquiry
 - scheduledateone
 - scheduledatetwo
+- nationality
 slots:
   name:
     type: text
@@ -115,6 +117,11 @@ slots:
     mappings:
     - type: from_entity
       entity: slot
+  nationality:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: nationality
 responses:
   utter_ask_name:
   - text: Hi, Hope you are having a good day. Could we start with your name please?
@@ -183,7 +190,7 @@ responses:
 
       *Patient's full name:*
       *Date of Birth:*
-      *IC number (Malaysian):* 
+      *IC Number (Malaysian)/ Passport Number (Foreigners) number (Malaysian):* 
 
       Let's go!
   utter_appointment_cancel:
@@ -214,7 +221,7 @@ responses:
 
       *Patient's full name:*
       *Date of Birth:*
-      *IC number (Malaysian):*
+      *IC Number (Malaysian)/ Passport Number (Foreigners):*
       *Gender:*
       *Email address:*
       *Contact Number:*
@@ -271,17 +278,17 @@ responses:
 
       We highly appreciate your kind understanding.
   utter_ask_full_name:
-  - text: Could you please provide the patient's full name?
+  - text: "*Could you please provide the patient's full name to start this whole journey?*"
   utter_ask_dob:
   - text: May I know the patient's date of birth, please? (DD/MM/YYYY)
   utter_ask_icnum_appointment:
-  - text: Please provide the patient's IC number for creating the appointment.
+  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for creating the appointment.
   utter_ask_icnum:
-  - text: Please provide the patient's IC number.
+  - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners).
   utter_ask_email:
   - text: Please provide the patient's email address.
   utter_ask_phone:
-  - text: Please provide the patient's phone number. (Phone number must be within 10 to 12 digit.)
+  - text: Please provide the patient's phone number. (Please include country code prefix e.g. +62)
   utter_ask_doctor:
   - text: Does the patient have any preferred doctor? If yes, please provide the name of the doctor.
   utter_ask_symptomp:
@@ -297,6 +304,13 @@ responses:
       payload: female
     - title: Others
       payload: others
+  utter_ask_nationality:
+  - text: Please indicate the patient's nationality.
+    buttons:
+    - title: Malaysian
+      payload: malaysian
+    - title: Foreigner
+      payload: foreigner
   utter_ask_scheduledateone:
   - text: When would you like to schedule the appointment? Please provide the preferred date and time.
   utter_ask_scheduledatetwo:
@@ -339,3 +353,4 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_other_services_confirm
+- utter_ask_nationality

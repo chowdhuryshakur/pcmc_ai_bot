@@ -36,6 +36,12 @@ stories:
   - action: action_tell_dob
   - slot_was_set:
     - dob: 19/04/1902
+  - action: utter_ask_nationality
+  - intent: tell_nationality
+    entities:
+    - nationality: malaysian
+  - slot_was_set:
+    - nationality: malaysian
   - checkpoint: ic_number_taking_checkpoint
 
 - story: ic_number_taking
@@ -45,7 +51,7 @@ stories:
   - intent: tell_icnum_appointment
   - action: action_tell_icnum_appointment
   - slot_was_set:
-    - icnum: 343-323-2222
+    - icnum: 960401-33-2222
   - action: utter_ask_gender
   - intent: tell_gender
     entities:
@@ -118,6 +124,12 @@ stories:
   - action: action_tell_dob
   - slot_was_set:
     - dob: 19/04/1902
+  - action: utter_ask_nationality
+  - intent: tell_nationality
+    entities:
+    - nationality: malaysian
+  - slot_was_set:
+    - nationality: malaysian
   - checkpoint: taking_ic_for_cancel_appointment_pat
 
 - story: ic_number_taking_cancel_appointment_path

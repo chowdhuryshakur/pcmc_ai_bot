@@ -155,7 +155,10 @@ nlu:
     - [others](gender).
     - [female](gender).
     - [others](gender)
-    - [female](gender)
+- intent: tell_nationality
+  examples: |
+    - [malaysian](nationality).
+    - [foreigner](nationality).
 - intent: goodbye
   examples: |
     - cu
@@ -257,7 +260,7 @@ nlu:
     - let me speak to a real person please
 - regex: phone
   examples: |
-    - \d{10,12}
+    - \d{10,14}
 - regex: tell_dob
   examples: |
     - dateOfBirth
