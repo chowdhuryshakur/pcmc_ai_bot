@@ -190,7 +190,7 @@ responses:
 
       *Patient's full name:*
       *Date of Birth:*
-      *IC Number (Malaysian)/ Passport Number (Foreigners) number (Malaysian):* 
+      *IC Number (Malaysian)/ Passport Number (Foreigners):* 
 
       Let's go!
   utter_appointment_cancel:
