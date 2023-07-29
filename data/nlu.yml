@@ -159,6 +159,10 @@ nlu:
   examples: |
     - [malaysian](nationality).
     - [foreigner](nationality).
+- intent: tell_nationality_two
+  examples: |
+    - ntwo [malaysian](nationality).
+    - ntwo [foreigner](nationality).
 - intent: goodbye
   examples: |
     - cu

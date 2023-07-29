@@ -124,8 +124,8 @@ stories:
   - action: action_tell_dob
   - slot_was_set:
     - dob: 19/04/1902
-  - action: utter_ask_nationality
-  - intent: tell_nationality
+  - action: utter_ask_nationality_two
+  - intent: tell_nationality_two
     entities:
     - nationality: malaysian
   - slot_was_set:

@@ -36,6 +36,8 @@ intents:
 - tell_symptomp
 - tell_nationality
 - tell_icnum_appointment
+- tell_nationality_two
+
 entities:
 - gender
 - phone
@@ -311,6 +313,13 @@ responses:
       payload: malaysian
     - title: Foreigner
       payload: foreigner
+  utter_ask_nationality_two:
+  - text: Please select the patient's nationality from the following options.
+    buttons:
+    - title: Malaysian
+      payload: malaysian
+    - title: Foreigner
+      payload: foreigner
   utter_ask_scheduledateone:
   - text: When would you like to schedule the appointment? Please provide the preferred date and time.
   utter_ask_scheduledatetwo:
@@ -354,3 +363,4 @@ actions:
 - utter_greet
 - utter_other_services_confirm
 - utter_ask_nationality
+- utter_ask_nationality_two
