@@ -292,7 +292,7 @@ responses:
   utter_ask_phone:
   - text: Please provide the patient's phone number. (Please include country code prefix e.g. +62)
   utter_ask_doctor:
-  - text: Does the patient have any preferred doctor? If yes, please provide the name of the doctor.
+  - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor. Or else please refer to the link below to see our specialist : https://princecourt.com/doctor_category/doctors/"
   utter_ask_symptomp:
   - text: Could you please provide some information about the patient's medical condition?
   utter_ask_enquiry:
