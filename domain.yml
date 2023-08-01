@@ -23,6 +23,7 @@ intents:
 - reschedule_appointment
 - schedule_new_appointment
 - tell_dob
+- tell_dob_two
 - tell_doctor
 - tell_email
 - tell_enquiry
@@ -283,6 +284,8 @@ responses:
   - text: "*Could you please provide the patient's full name to start this whole journey?*"
   utter_ask_dob:
   - text: May I know the patient's date of birth, please? (DD/MM/YYYY)
+  utter_ask_dob_two:
+  - text: Could you kindly provide the patient's date of birth in the format DD/MM/YYYY, please?
   utter_ask_icnum_appointment:
   - text: Please provide the patient's IC Number (Malaysian)/ Passport Number (Foreigners) for creating the appointment.
   utter_ask_icnum:
@@ -330,6 +333,7 @@ session_config:
 actions:
 - action_tell_icnum_appointment
 - action_tell_dob
+- action_tell_dob_two
 - action_tell_doctor
 - action_tell_email
 - action_tell_full_name
@@ -347,6 +351,7 @@ actions:
 - utter_ask_appointment_cancel_info
 - utter_ask_appointment_info
 - utter_ask_dob
+- utter_ask_dob_two
 - utter_ask_doctor
 - utter_ask_email
 - utter_ask_enquiry
