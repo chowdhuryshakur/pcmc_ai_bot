@@ -133,11 +133,11 @@ nlu:
     - "scheduleDatetwoo 30/06/2023 @ 12:03 pm"
 - intent: tell_phone
   examples: |
-    - number is [01843727741](phone)
-    - My number is [01843727741](phone)
+    - number is [+01843727741](phone)
+    - My number is [+01843727741](phone)
     - My phone number is [4637457382](phone)
     - [33315327130](phone)
-    - [83283332838](phone)
+    - [+83283332838](phone)
 - intent: tell_gender
   examples: |
     - [male](gender).
