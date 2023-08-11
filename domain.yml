@@ -162,7 +162,7 @@ responses:
       payload: /reschedule_appointment
     - title: Cancel Appointment
       payload: /cancel_appointment
-    - title: Next Available Appointment
+    - title: Next Available Appt
       payload: /next_available_appointment
     - title: Health Screening
       payload: /health_screening
