@@ -20,7 +20,7 @@ stories:
     - intent: schedule_new_appointment
     - intent: reschedule_appointment
     - intent: health_screening
-    - intent: nearest_appointment_date_availability
+    - intent: next_available_appointment
   - action: utter_ask_appointment_info
   - checkpoint: name_and_dob_checkpoint_for_appointment_path
 

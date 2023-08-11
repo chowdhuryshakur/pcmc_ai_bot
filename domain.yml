@@ -22,7 +22,7 @@ intents:
 - proceed
 - reschedule_appointment
 - schedule_new_appointment
-- nearest_appointment_date_availability
+- next_available_appointment
 - tell_dob
 - tell_dob_two
 - tell_doctor
@@ -162,8 +162,8 @@ responses:
       payload: /reschedule_appointment
     - title: Cancel Appointment
       payload: /cancel_appointment
-    - title: Nearest Appointment Date Availability
-      payload: /nearest_appointment_date_availability
+    - title: Next Available Appointment
+      payload: /next_available_appointment
     - title: Health Screening
       payload: /health_screening
     - title: Occupational Screening
