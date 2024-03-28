@@ -133,12 +133,12 @@ responses:
   - text: |-
       Hi {name}
 
-      Welcome to *Prince Court Medical Centre* WhatsApp Appointment.
+      Welcome to *KPJ Ampang Puteri Specialist Hospital* WhatsApp Appointment.
 
       _This Platform is strictly for appointment booking only._
 
       I am your *Virtual Assistant*. Please tap the 'Proceed' button for further assistance.
-    image: https://princecourt.com/wp-content/themes/pcmc/assets/images/logo-2x.png
+    image: https://bernama.com/storage/photos/0ed606deb7433f6f5ace448536772b0360531eda1e2fe
     buttons:
     - title: Proceed
       payload: /proceed
@@ -203,18 +203,18 @@ responses:
   - text: |-
       Dear {name}
 
-      Warmest Greeting from Prince Court Medical Centre.
+      Warmest Greeting from KPJ Ampang Puteri Specialist Hospital.
 
       Thank you for choosing us as your preferred choice of healthcare service provider.
 
       As per your request, we have cancelled your appointment.
   utter_goodbye:
   - text: |-
-      Warmest Greeting from Prince Court Medical Centre.
+      Warmest Greeting from KPJ Ampang Puteri Specialist Hospital.
 
       Thank you for choosing us as your preferred choice of healthcare service provider.
   utter_iamabot:
-  - text: I'm a virtual assistant here to assist with your PCMC support.
+  - text: I'm a virtual assistant here to assist with your KPJ support.
   utter_handoff:
   - text: I apologize for any inconvenience caused. Allow me to transfer you to a live agent for further assistance.
   utter_please_rephrase:
@@ -241,7 +241,7 @@ responses:
   - text: |-
       Dear {name}
 
-      Warmest Greeting from Prince Court Medical Centre.
+      Warmest Greeting from KPJ Ampang Puteri Specialist Hospital.
 
       Thank you for choosing us as your preferred choice of healthcare service provider.
 
@@ -253,9 +253,9 @@ responses:
       *Insurance Assistant Direct Line:* 03-21600877
       *Insurance Assistant Fax Line:* 03-27823377
 
-      Below are useful reminder to ensure the registration process is smooth during your clinic visit with your Doctor at Prince Court Medical Centre.
+      Below are useful reminder to ensure the registration process is smooth during your clinic visit with your Doctor at KPJ Ampang Puteri Specialist Hospital.
       -   Kindly register at the Outpatient Specialist Clinic Registration Counter at Level 1, Lobby 2 before proceeding to the clinic. (Please allow 15 minutes for registration to be on time for your appointment)
-      -   Please ensure that you have pre-arranged with your insurance Provider/Third Party Administrator or Corporate HR for your letter of guarantee of payment and kindly bring along this letter of guarantee to avoid any delay. (Prince Court Medical Centre must be an acceptable panel hospital to your insurance/TPA/Corporate HR for a letter of Guarantee to be issued)
+      -   Please ensure that you have pre-arranged with your insurance Provider/Third Party Administrator or Corporate HR for your letter of guarantee of payment and kindly bring along this letter of guarantee to avoid any delay. (KPJ Ampang Puteri Specialist Hospital must be an acceptable panel hospital to your insurance/TPA/Corporate HR for a letter of Guarantee to be issued)
       -   Please bring along any referral letter from your current Doctor (e.g. G.P) or previous test results done at another hospitals, for our attending doctor's reference.
   utter_ask_other_services_info:
   - text: |-
@@ -276,7 +276,7 @@ responses:
   - text: |-
       Dear {name}
 
-      Warmest Greeting from Prince Court Medical Centre.
+      Warmest Greeting from KPJ Ampang Puteri Specialist Hospital.
 
       Thank you for choosing us as your preferred choice of healthcare service provider.
 
@@ -298,7 +298,7 @@ responses:
   utter_ask_phone:
   - text: Please provide the patient's phone number. (Please include country code prefix e.g. +62)
   utter_ask_doctor:
-  - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor. Or else please refer to the link below to see our specialist : https://princecourt.com/doctor_category/doctors/"
+  - text: "Does the patient have any preferred doctor? If yes, please provide the name of the doctor. Or else please refer to the link below to see our specialist : https://www.kpjhealth.com.my/ampang/find-doctor"
   utter_ask_symptomp:
   - text: Could you please provide some information about the patient's medical condition?
   utter_ask_enquiry:
